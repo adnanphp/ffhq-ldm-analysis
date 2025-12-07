@@ -1,0 +1,295 @@
+\section{Focused Demographic Cluster Analysis}
+\label{sec:focused_demographic_analysis}
+
+To specifically analyze demographic patterns in generated faces, we developed a focused cluster analysis framework that targets gender, age, and ethnicity characteristics. This specialized analysis provides insights into potential biases and distribution patterns in the generated face dataset.
+
+\subsection{Analysis Framework Design}
+\label{subsec:focused_framework_design}
+
+The focused cluster analysis framework is specifically engineered for face image analysis, with feature extraction methods tailored to demographic characteristics:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{cluster_demographic_analysis.png}
+\caption{Focused cluster analysis results showing gender and age pattern separation}
+\label{fig:focused_cluster_analysis}
+\end{figure}
+
+\subsubsection{Specialized Feature Extraction}
+The framework extracts face-relevant features through:
+
+\begin{equation}
+\text{Face Features} = [\text{Skin Tone}, \text{Hair Color}, \text{Face Shape}, \text{Texture}, \text{Symmetry}]
+\end{equation}
+
+where each component includes:
+\begin{itemize}
+    \item \textbf{Skin Tone Features}: RGB mean values from central face region, brightness, and color variation
+    \item \textbf{Hair Color Features}: RGB mean from top image region, brightness
+    \item \textbf{Face Shape Features}: Edge strength in facial region for jawline detection
+    \item \textbf{Texture Features}: Laplacian-based texture energy for wrinkle analysis
+    \item \textbf{Symmetry Features}: Horizontal symmetry score for facial symmetry assessment
+\end{itemize}
+
+\subsection{Demographic Analysis Methods}
+\label{subsec:demographic_analysis_methods}
+
+\subsubsection{Gender Pattern Analysis}
+Gender estimation uses facial feature heuristics:
+
+\begin{equation}
+\text{Gender Score} = \alpha \cdot \text{Jaw Strength} + \beta \cdot \text{Brow Contrast}
+\end{equation}
+
+where:
+\begin{itemize}
+    \item $\text{Jaw Strength} = \text{Mean}(\text{Sobel}(\text{Bottom Region}))$ - indicates jawline definition
+    \item $\text{Brow Contrast} = \sigma(\text{Brow Region})$ - indicates brow ridge prominence
+    \item $\alpha = 0.6, \beta = 0.4$ - empirical weights
+\end{itemize}
+
+\subsubsection{Age Pattern Analysis}
+Age estimation combines multiple texture and contrast features:
+
+\begin{equation}
+\text{Age Score} = \gamma \cdot \text{Texture Energy} + \delta \cdot \text{Contrast} - \epsilon \cdot \text{Smoothness}
+\end{equation}
+
+where:
+\begin{itemize}
+    \item $\text{Texture Energy} = \text{Mean}(|\nabla^2 G_{\sigma=1}(I)|)$ - Laplacian of Gaussian for wrinkle detection
+    \item $\text{Contrast} = \sigma(I)$ - overall image contrast
+    \item $\text{Smoothness} = \text{Mean}(|I - G_{\sigma=2}(I)|)$ - deviation from smoothed version
+    \item $\gamma = 0.5, \delta = 0.3, \epsilon = 0.2$ - empirical weights
+\end{itemize}
+
+\subsubsection{Ethnicity Pattern Analysis}
+Skin tone analysis uses HSV color space:
+
+\begin{equation}
+\text{Ethnicity Category} = f(H_{\text{skin}}, S_{\text{skin}}, V_{\text{skin}})
+\end{equation}
+
+where conversion from RGB to HSV is performed using:
+\begin{equation}
+\begin{aligned}
+V &= \max(R,G,B) \\
+S &= \begin{cases}
+\frac{V - \min(R,G,B)}{V} & \text{if } V > 0 \\
+0 & \text{otherwise}
+\end{cases} \\
+H &= \begin{cases}
+0 & \text{if } V = \min(R,G,B) \\
+60 \times \frac{G - B}{V - \min(R,G,B)} & \text{if } V = R \\
+60 \times \left(2 + \frac{B - R}{V - \min(R,G,B)}\right) & \text{if } V = G \\
+60 \times \left(4 + \frac{R - G}{V - \min(R,G,B)}\right) & \text{if } V = B
+\end{cases}
+\end{aligned}
+\end{equation}
+
+\subsection{Analysis Results}
+\label{subsec:focused_results}
+
+\subsubsection{Cluster Distribution}
+Analysis of 64 generated faces revealed two main clusters:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Cluster} & \textbf{Number of Images} & \textbf{Percentage} \\
+\hline
+Cluster 0 & 43 & 67.2\% \\
+Cluster 1 & 21 & 32.8\% \\
+\hline
+\end{tabular}
+\caption{Distribution of generated faces across identified clusters}
+\label{tab:focused_cluster_distribution}
+\end{table}
+
+\subsubsection{Gender Analysis Results}
+Both clusters showed characteristics potentially indicative of male faces:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Cluster} & \textbf{Jaw Strength} & \textbf{Brow Contrast} & \textbf{Gender Estimation} \\
+\hline
+Cluster 0 & 0.325 & 0.356 & Potentially male \\
+Cluster 1 & 0.259 & 0.322 & Potentially male \\
+\hline
+\end{tabular}
+\caption{Gender pattern analysis results}
+\label{tab:gender_analysis}
+\end{table}
+
+The higher jaw strength and brow contrast values in both clusters suggest predominantly masculine facial features in the generated dataset.
+
+\subsubsection{Age Analysis Results}
+Both clusters displayed characteristics potentially indicating older individuals:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Cluster} & \textbf{Texture Energy} & \textbf{Smoothness} & \textbf{Contrast} & \textbf{Age Estimation} \\
+\hline
+Cluster 0 & 0.043 & 0.068 & 0.354 & Potentially older \\
+Cluster 1 & 0.031 & 0.049 & 0.285 & Potentially older \\
+\hline
+\end{tabular}
+\caption{Age pattern analysis results}
+\label{tab:age_analysis}
+\end{table}
+
+Higher texture energy and contrast values in Cluster 0 suggest more pronounced aging characteristics compared to Cluster 1.
+
+\subsubsection{Ethnicity Analysis Results}
+Skin tone analysis revealed distinct color characteristics:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Cluster} & \textbf{Skin Tone (RGB)} & \textbf{Brightness} & \textbf{Saturation} & \textbf{Ethnicity Estimation} \\
+\hline
+Cluster 0 & (0.69, 0.61, 0.38) & 0.69 & 0.46 & Mixed or unclear \\
+Cluster 1 & (0.53, 0.42, 0.16) & 0.53 & 0.69 & Potentially medium/warm \\
+\hline
+\end{tabular}
+\caption{Ethnicity pattern analysis results}
+\label{tab:ethnicity_analysis}
+\end{table}
+
+Cluster 0 shows higher brightness and lower saturation, while Cluster 1 exhibits warmer, more saturated skin tones.
+
+\subsection{Methodological Details}
+\label{subsec:focused_methodology}
+
+\subsubsection{Facial Region Detection}
+The analysis employs a simplified facial region detection heuristic:
+
+\begin{verbatim}
+# Extract center region where face is typically located
+height, width = image.shape[:2]
+center_h, center_w = height // 2, width // 2
+crop_size = min(height, width) // 3  # 1/3 of smaller dimension
+
+face_region = image[center_h-crop_size:center_h+crop_size,
+                    center_w-crop_size:center_w+crop_size]
+\end{verbatim}
+
+\subsubsection{Texture Analysis Implementation}
+Age-related texture analysis uses Gaussian Laplacian for wrinkle detection:
+
+\begin{verbatim}
+# Compute texture energy using Laplacian of Gaussian
+from scipy.ndimage import gaussian_laplace
+laplacian = gaussian_laplace(grayscale_image, sigma=1.0)
+texture_energy = np.mean(np.abs(laplacian))
+\end{verbatim}
+
+\subsubsection{Symmetry Calculation}
+Facial symmetry is computed using horizontal reflection:
+
+\begin{verbatim}
+# Calculate horizontal symmetry score
+left_half = image[:, :width//2]
+right_half = np.fliplr(image[:, width//2:])
+symmetry_score = np.mean(np.abs(left_half - right_half))
+\end{verbatim}
+
+\subsection{Limitations and Considerations}
+\label{subsec:focused_limitations}
+
+\subsubsection{Methodological Limitations}
+\begin{enumerate}
+    \item \textbf{Simplified feature extraction}: Relies on geometric heuristics rather than learned facial landmarks
+    \item \textbf{Binary gender assumptions}: Uses traditional male/female facial feature stereotypes
+    \item \textbf{Ethnicity oversimplification}: Reduces complex ethnic characteristics to skin tone metrics
+    \item \textbf{No ground truth validation}: Cannot verify accuracy without labeled dataset
+\end{enumerate}
+
+\subsubsection{Ethical Considerations}
+\begin{itemize}
+    \item Gender and ethnicity classifications are algorithmic estimates, not definitive labels
+    \item Analysis may perpetuate stereotypes if interpreted uncritically
+    \item Results should be used for understanding model behavior, not for making demographic claims
+    \item Manual validation is essential for any applied use cases
+\end{itemize}
+
+\subsection{Practical Applications}
+\label{subsec:focused_applications}
+
+\subsubsection{Bias Detection and Mitigation}
+The analysis can help identify:
+\begin{itemize}
+    \item Gender imbalance in generated faces
+    \item Age distribution biases
+    \item Ethnic diversity or lack thereof
+    \item Systematic patterns in facial feature generation
+\end{itemize}
+
+\subsubsection{Dataset Curation Guidance}
+Results can inform:
+\begin{itemize}
+    \item Targeted generation strategies to improve diversity
+    \item Dataset balancing efforts
+    \item Model fine-tuning for specific demographic groups
+    \begin{verbatim}
+# Example: Generating more diverse age range
+if cluster_analysis['age_estimation'] == 'Potentially older':
+    adjust_generation_parameters(reduce_texture=True)
+    \end{verbatim}
+\end{itemize}
+
+\subsection{Visualization and Reporting}
+\label{subsec:focused_visualization}
+
+The framework generates comprehensive outputs:
+
+\subsubsection{Cluster Collages}
+Each cluster is visualized as a collage grid showing representative images, allowing for manual pattern recognition and validation of algorithmic classifications.
+
+\subsubsection{Demographic Analysis Plot}
+The main visualization (Figure \ref{fig:focused_cluster_analysis}) shows:
+\begin{enumerate}
+    \item PCA projection of face features colored by cluster assignment
+    \item Bar chart of cluster sizes
+    \item Gender pattern scatter plot with heuristic classification regions
+    \item Age pattern scatter plot with heuristic classification regions
+\end{enumerate}
+
+\subsubsection{Comprehensive Report}
+The automated report includes:
+\begin{itemize}
+    \item Dataset summary and cluster distribution
+    \item Detailed gender, age, and ethnicity analysis
+    \item Feature metrics and algorithmic estimations
+    \item Recommendations for further analysis
+    \item Paths to all generated visualizations and data files
+\end{itemize}
+
+\subsection{Conclusions and Future Directions}
+\label{subsec:focused_conclusions}
+
+The focused cluster analysis revealed that:
+\begin{enumerate}
+    \item Generated faces cluster into two main groups with 67\%-33\% distribution
+    \item Both clusters show predominantly masculine facial characteristics
+    \item Age characteristics suggest older individuals in both clusters
+    \item Skin tone variations suggest some ethnic diversity but limited range
+\end{enumerate}
+
+\subsubsection{Recommended Improvements}
+Future work should address:
+\begin{itemize}
+    \item Integration of pre-trained demographic classifiers
+    \item More sophisticated facial landmark detection
+    \item Multi-dimensional demographic representation
+    \item Ground truth validation with labeled datasets
+    \item Intersectional analysis considering multiple demographic dimensions simultaneously
+\end{itemize}
+
+This focused analysis framework provides a valuable starting point for understanding demographic patterns in generated faces, though results should be interpreted with awareness of methodological limitations and potential biases.

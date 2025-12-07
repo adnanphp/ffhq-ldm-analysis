@@ -1,0 +1,9 @@
+{
+  "identity_diversity": 0.20018675591912882,
+  "avg_color_diversity": 0.3531865179538727,
+  "avg_face_score": 0.825,
+  "avg_similarity": 0.7998132440808712,
+  "n_faces": 10,
+  "interpretation": "POOR (Low diversity, faces look similar)",
+  "timestamp": "2025-12-02T03:33:39.913354"
+}

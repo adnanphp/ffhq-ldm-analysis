@@ -1,0 +1,64 @@
+model:
+  params:
+    channels: 3
+    cond_stage_config:
+      params:
+        embed_dim: 128
+        n_classes: 1000
+      target: ldm.modules.encoders.modules.ClassEmbedder
+    cond_stage_key: class_label
+    cond_stage_trainable: false
+    conditioning_key: null
+    first_stage_config:
+      params:
+        ddconfig:
+          attn_resolutions: []
+          ch: 128
+          ch_mult:
+          - 1
+          - 2
+          - 4
+          double_z: false
+          dropout: 0.0
+          in_channels: 3
+          num_res_blocks: 2
+          out_ch: 3
+          resolution: 256
+          z_channels: 3
+        embed_dim: 3
+        lossconfig:
+          target: torch.nn.Identity
+        n_embed: 8192
+      target: ldm.models.autoencoder.VQModelInterface
+    first_stage_key: image
+    image_size: 64
+    linear_end: 0.0195
+    linear_start: 0.0015
+    log_every_t: 200
+    monitor: val/loss_simple_ema
+    num_timesteps_cond: 1
+    scale_factor: 1.0
+    timesteps: 1000
+    unet_config:
+      params:
+        attention_resolutions:
+        - 1
+        channel_mult:
+        - 1
+        - 2
+        - 3
+        - 4
+        context_dim: null
+        image_size: 32
+        in_channels: 3
+        legacy: false
+        model_channels: 128
+        num_heads: 4
+        num_res_blocks: 2
+        out_channels: 3
+        transformer_depth: 1
+        use_checkpoint: true
+        use_spatial_transformer: false
+      target: ldm.modules.diffusionmodules.openaimodel.UNetModel
+    use_ema: false
+  target: ldm.models.diffusion.ddpm.LatentDiffusion

@@ -1,0 +1,17 @@
+{
+  "report_generated": "2025-12-02T09:23:59.621588",
+  "best_model": "Real",
+  "worst_model": "StyleGAN2",
+  "model_scores": {
+    "Real": 4.517721518987342,
+    "FFHQ-LDM": 3.9609561752988047,
+    "StyleGAN3": 3.778151260504202,
+    "StyleGAN2": 3.462043795620438
+  },
+  "total_participants": 50,
+  "total_ratings": 5000,
+  "key_findings": {
+    "best_performing": "Real",
+    "worst_performing": "StyleGAN2",
+    "realism_leader": "Real",
+    "significant_differences": 

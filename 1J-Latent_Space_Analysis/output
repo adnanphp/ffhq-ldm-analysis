@@ -1,0 +1,87 @@
+python3 interpolation_density_outlier.py
+🔬 LATENT MANIFOLD ANALYSIS
+============================================================
+📁 Output directory: latent_manifold_analysis_20251204_153529
+
+============================================================
+RUNNING COMPREHENSIVE LATENT SPACE ANALYSIS
+============================================================
+📂 Using data directory: latent_analysis_20251202_175108/latents/
+
+📂 Looking for data in: latent_analysis_20251202_175108/latents/
+⚠️ No latent files found, using images as pseudo-latents
+
+📂 Loading images from: latent_analysis_20251202_175108/latents/
+📊 Found 64 images
+Processing images: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 64/64 [00:00<00:00, 79.01it/s]
+✅ Extracted 114 features from images
+✅ Features shape: (64, 114)
+
+✅ Starting analysis with 64 data points
+
+🌐 Performing manifold learning (to 2D)...
+   Performing PCA...
+   Performing t-SNE...
+   Performing UMAP...
+   Performing Isomap...
+   Performing MDS...
+
+📐 Calculating manifold properties...
+   PCA     : Density=0.915, Curvature=0.728, Dim≈0.7
+   TSNE    : Density=2.184, Curvature=0.739, Dim≈0.6
+   UMAP    : Density=2.090, Curvature=0.755, Dim≈0.5
+   ISOMAP  : Density=0.571, Curvature=0.778, Dim≈0.8
+   MDS     : Density=0.403, Curvature=0.669, Dim≈0.4
+
+🎨 Creating manifold visualizations...
+
+🔗 Performing interpolation analysis (10 steps)...
+   Pair 1: Points 0 ↔ 63
+      Linear: Smoothness=99999996.256, Curvature=0.000
+      Spherical: Smoothness=64.558, Curvature=0.125
+   Pair 2: Points 16 ↔ 48
+      Linear: Smoothness=99999990.015, Curvature=0.000
+      Spherical: Smoothness=118.630, Curvature=0.092
+   Pair 3: Points 21 ↔ 42
+      Linear: Smoothness=99999990.792, Curvature=0.000
+      Spherical: Smoothness=88.780, Curvature=0.106
+
+📈 Creating interpolation visualizations...
+
+📊 Performing density estimation...
+   Performing Kernel Density Estimation...
+   Fitting Gaussian Mixture Model...
+   Performing k-NN density estimation...
+
+📈 Creating density visualizations...
+
+🔍 Performing outlier detection...
+   Running Isolation Forest...
+   Running Local Outlier Factor...
+   ⚠️ Local Outlier Factor failed: name 'LocalOutlierFactor' is not defined
+   Running One-Class SVM...
+✅ Found 2 consensus outliers
+
+📊 Creating outlier visualizations...
+
+💾 Saving 2 outlier images...
+✅ Created outlier collage with 2 images
+
+============================================================
+GENERATING ANALYSIS REPORT
+============================================================
+✅ Report saved to: latent_manifold_analysis_20251204_153529/analysis_report.txt
+
+============================================================
+ANALYSIS COMPLETE!
+============================================================
+✅ Total time: 9.0 seconds
+✅ Output saved to: latent_manifold_analysis_20251204_153529/
+✅ Report: latent_manifold_analysis_20251204_153529/analysis_report.txt
+
+🎯 Analysis Summary:
+   • Analyzed 64 data points
+   • Studied manifold topology
+   • Compared interpolation methods
+   • Estimated probability density
+   • Identified anomalous points

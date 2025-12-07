@@ -1,0 +1,114 @@
+python3 ffhq_analyze_existing_faces.py
+📊 EXISTING FACE NOVELTY ANALYZER
+============================================================
+
+This script analyzes ALREADY GENERATED faces.
+It calculates:
+1. Novelty percentage (target: >50%)
+2. Average similarity (target: <0.8)
+3. Style diversity
+============================================================
+📊 EXISTING FACE ANALYZER
+============================================================
+📁 Analysis output: face_analysis_20251206_152154
+📂 Analyzing faces from: diverse_faces_20251206_144344/faces
+
+🔬 RUNNING COMPLETE ANALYSIS
+==================================================
+
+📥 LOADING EXISTING FACES
+========================================
+Found 5 face images
+  Loaded: face_000_seed42.png (256x256)
+  Loaded: face_004_seed442.png (256x256)
+  Loaded: face_002_seed242.png (256x256)
+  Loaded: face_001_seed142.png (256x256)
+  Loaded: face_003_seed342.png (256x256)
+✅ Successfully loaded 5 faces
+📄 Loading summary saved: face_analysis_20251206_152154/loading_summary.json
+
+📊 Starting analysis on 5 faces...
+
+📊 ANALYZING NOVELTY
+========================================
+Analyzing 5 faces...
+
+📈 NOVELTY RESULTS:
+  Total faces analyzed: 5
+  Unique faces: 0
+  Novelty percentage: 0.0%
+  Average similarity: 0.988
+  Maximum similarity: 0.997
+  Minimum similarity: 0.970
+
+🔢 Pairwise similarities:
+  Face 0 vs Face 1: 0.995
+  Face 0 vs Face 2: 0.994
+  Face 0 vs Face 3: 0.979
+  Face 0 vs Face 4: 0.997
+  Face 1 vs Face 0: 0.995
+  Face 1 vs Face 2: 0.987
+  Face 1 vs Face 3: 0.970
+  Face 1 vs Face 4: 0.995
+  Face 2 vs Face 0: 0.994
+  Face 2 vs Face 1: 0.987
+  Face 2 vs Face 3: 0.992
+  Face 2 vs Face 4: 0.994
+  Face 3 vs Face 0: 0.979
+  Face 3 vs Face 1: 0.970
+  Face 3 vs Face 2: 0.992
+  Face 3 vs Face 4: 0.977
+  Face 4 vs Face 0: 0.997
+  Face 4 vs Face 1: 0.995
+  Face 4 vs Face 2: 0.994
+  Face 4 vs Face 3: 0.977
+📊 Creating visualizations...
+/home/adnan/Music/1B-Fall-2025-Courses/COMP 473-Pattern-recognition/1zzzz-implemnataion/1D-Implemenation/1a-Part-01/ffhq_analyze_existing_faces.py:340: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+📊 Visualization saved: face_analysis_20251206_152154/novelty_analysis.png
+📄 Results saved: face_analysis_20251206_152154/novelty_results.json
+
+🎨 ANALYZING STYLE DIVERSITY
+========================================
+📊 STYLE DIVERSITY:
+  Brightness variation: 0.039
+  Contrast variation: 0.027
+  Color range:
+    Red: 0.291 - 0.420
+    Green: 0.285 - 0.401
+    Blue: 0.086 - 0.289
+📄 Style analysis saved: face_analysis_20251206_152154/style_analysis.json
+
+🎯 WEEK 1 TARGET CHECK
+========================================
+Target 1: Novelty > 50%
+  Your score: 0.0%
+  Status: ❌ FAIL
+
+Target 2: Average similarity < 0.8
+  Your score: 0.988
+  Status: ❌ FAIL
+
+Target 3: Both targets met
+  Status: ❌ TARGETS NOT MET
+
+📋 INTERPRETATION: VERY LOW novelty (significant repetition)
+
+📄 Target check saved: face_analysis_20251206_152154/target_check.json
+
+📋 CREATING COMPREHENSIVE REPORT
+========================================
+📄 Comprehensive report saved: face_analysis_20251206_152154/comprehensive_report.json
+📋 Text summary saved: face_analysis_20251206_152154/analysis_summary.txt
+
+✅ ANALYSIS COMPLETE!
+📁 All results saved in: face_analysis_20251206_152154
+
+🚨 CRITICAL: 0% novelty - All faces are identical!
+   This matches your original problem.
+   SOLUTION: Use VERY different seeds (seed * 1000)
+
+============================================================
+ANALYSIS COMPLETE
+============================================================
+📊 Check the results in the output directory!

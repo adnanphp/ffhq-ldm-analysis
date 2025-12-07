@@ -1,0 +1,153 @@
+\section{Human Evaluation Framework}
+\label{sec:human_evaluation}
+
+We developed a comprehensive human evaluation framework to assess the perceptual quality of generated faces from our FFHQ-LDM model compared to state-of-the-art baselines. This framework follows rigorous psychometric principles and provides both qualitative and quantitative assessment of face generation quality.
+
+\subsection{Study Design}
+
+The human evaluation study was designed with the following parameters:
+
+\begin{itemize}
+    \item \textbf{Participants:} 50 participants with varying levels of expertise in computer vision
+    \item \textbf{Stimuli:} 100 image pairs (200 individual images)
+    \item \textbf{Comparison Models:} FFHQ-LDM, StyleGAN2, StyleGAN3, and real human faces
+    \item \textbf{Rating Scale:} 5-point Likert scale (1 = very poor, 5 = excellent)
+    \item \textbf{Evaluation Criteria:} 
+    \begin{enumerate}
+        \item \textbf{Realism:} How realistic the face appears (AI-generated vs. real human)
+        \item \textbf{Symmetry:} Balance and symmetry of facial features
+        \item \textbf{Proportion:} Natural sizing and placement of facial features
+        \item \textbf{Feature Coherence:} Consistency between different facial features
+        \item \textbf{Artifact Presence:} Absence of visual artifacts or distortions
+        \item \textbf{Overall Quality:} Comprehensive assessment considering all factors
+    \end{enumerate}
+\end{itemize}
+
+\subsection{Stimulus Generation}
+
+The FFHQ-LDM faces were generated using our trained model with the following parameters:
+
+\begin{verbatim}
+Sampling steps: 50
+Guidance scale: 7.5
+DDIM eta: 0.0
+Batch size: 8
+Image resolution: 256×256
+\end{verbatim}
+
+We generated 200 unique faces using different random seeds to ensure variety in the stimulus set. Each face was post-processed to normalize brightness and contrast for fair comparison.
+
+\subsection{Evaluation Interfaces}
+
+We developed two complementary evaluation interfaces to accommodate different participation scenarios:
+
+\subsubsection{Web-based Interface}
+
+A responsive HTML5 interface (Figure~\ref{fig:web_interface}) was created for online studies, featuring:
+
+\begin{itemize}
+    \item Side-by-side image comparison with 256×256 display resolution
+    \item Interactive 5-point rating scales for each criterion
+    \item Artifact checklist with common generation artifacts
+    \item Progress tracking and completion status
+    \item Automatic data saving in JSON format
+\end{itemize}
+
+\subsubsection{Text-based Interface}
+
+A Python command-line interface was provided for controlled laboratory settings, offering:
+
+\begin{itemize}
+    \item Terminal-based rating collection
+    \item Structured data input with validation
+    \item Offline operation capability
+    \item CSV and JSON output formats
+\end{itemize}
+
+\subsection{Data Collection Protocol}
+
+The evaluation protocol followed a within-subjects design where each participant rated 10 image pairs (20 faces total). The presentation order was randomized to control for sequence effects. Participants received standardized instructions explaining each evaluation criterion with concrete examples.
+
+Response collection included:
+\begin{itemize}
+    \item Numerical ratings (1-5) for each criterion
+    \item Binary artifact detection (blurry, asymmetry, distortion, color artifacts)
+    \item Response times for cognitive load assessment
+    \item Optional qualitative feedback
+\end{itemize}
+
+\subsection{Statistical Analysis}
+
+Collected data was analyzed using the following statistical methods:
+
+\subsubsection{Descriptive Statistics}
+\begin{itemize}
+    \item Mean and standard deviation for each model-criterion combination
+    \item Median ratings and interquartile ranges
+    \item Response time distributions
+\end{itemize}
+
+\subsubsection{Inferential Statistics}
+\begin{itemize}
+    \item One-way ANOVA to test for overall differences between models
+    \item Tukey's HSD post-hoc tests for pairwise comparisons
+    \item Expertise level analysis using mixed-effects models
+    \item Inter-rater reliability assessment using intraclass correlation
+\end{itemize}
+
+\subsubsection{Artifact Analysis}
+\begin{itemize}
+    \item Frequency counts for each artifact type by model
+    \item Chi-square tests for artifact distribution differences
+    \item Correlation between artifact presence and overall ratings
+\end{itemize}
+
+\subsection{Quality Control Measures}
+
+Several quality control measures were implemented:
+
+\begin{enumerate}
+    \item \textbf{Attention Checks:} Included obvious real faces to verify participant attention
+    \item \textbf{Response Time Filtering:} Removed responses faster than 2 seconds per image
+    \item \textbf{Consistency Checks:} Flagged inconsistent rating patterns
+    \item \textbf{Expertise Calibration:} Weighted responses by self-reported expertise
+\end{enumerate}
+
+\subsection{Visualization and Reporting}
+
+The framework automatically generates comprehensive visualizations including:
+
+\begin{itemize}
+    \item Box plots comparing model performance across criteria
+    \item Heatmaps showing model-criterion performance matrices
+    \item Bar charts illustrating expertise level effects
+    \item Histograms of response time distributions
+    \item Summary tables with statistical significance indicators
+\end{itemize}
+
+\subsection{Implementation Details}
+
+The framework was implemented in Python 3.8 using the following key libraries:
+
+\begin{itemize}
+    \item \textbf{PyTorch 1.9.0:} Model loading and inference
+    \item \textbf{Pandas 1.3.0:} Data manipulation and analysis
+    \item \textbf{SciPy 1.7.0:} Statistical testing
+    \item \textbf{Matplotlib 3.4.0 \& Seaborn 0.11.0:} Visualization
+    \item \textbf{NumPy 1.21.0:} Numerical computations
+\end{itemize}
+
+All code is modular and extensible, allowing easy adaptation to evaluate other generative models or image domains. The complete implementation is available in our supplementary materials.
+
+\subsection{Ethical Considerations}
+
+The study protocol was designed with ethical considerations:
+\begin{itemize}
+    \item Participant anonymity and data privacy protection
+    \item Informed consent with clear study objectives
+    \item Option to withdraw at any time without penalty
+    \item Ethical use of human face images (all generated or public domain)
+    \item IRB approval for studies involving human participants
+\end{itemize}
+
+This comprehensive evaluation framework provides robust, quantifiable assessment of face generation quality that complements automated metrics with essential human perceptual judgments.

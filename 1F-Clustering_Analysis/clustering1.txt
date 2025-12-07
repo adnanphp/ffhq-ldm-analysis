@@ -1,0 +1,86 @@
+.
+├── cluster_analysis_20251204_143658
+│   ├── analysis
+│   │   ├── cluster_analysis_data.json
+│   │   └── cluster_analysis_report.txt
+│   ├── clusters
+│   │   ├── cluster_0
+│   │   │   ├── sample_001_sample_0001.png
+│   │   │   ├── sample_002_sample_0002.png
+│   │   │   ├── sample_004_sample_0004.png
+│   │   │   ├── sample_005_sample_0005.png
+│   │   │   ├── sample_006_sample_0006.png
+│   │   │   ├── sample_009_sample_0009.png
+│   │   │   ├── sample_010_sample_0010.png
+│   │   │   ├── sample_013_sample_0013.png
+│   │   │   ├── sample_014_sample_0014.png
+│   │   │   ├── sample_015_sample_0015.png
+│   │   │   ├── sample_017_sample_0017.png
+│   │   │   ├── sample_020_sample_0020.png
+│   │   │   ├── sample_021_sample_0021.png
+│   │   │   ├── sample_022_sample_0022.png
+│   │   │   ├── sample_023_sample_0023.png
+│   │   │   ├── sample_024_sample_0024.png
+│   │   │   ├── sample_025_sample_0025.png
+│   │   │   ├── sample_026_sample_0026.png
+│   │   │   ├── sample_029_sample_0029.png
+│   │   │   ├── sample_030_sample_0030.png
+│   │   │   ├── sample_031_sample_0031.png
+│   │   │   ├── sample_032_sample_0032.png
+│   │   │   ├── sample_034_sample_0034.png
+│   │   │   ├── sample_035_sample_0035.png
+│   │   │   ├── sample_036_sample_0036.png
+│   │   │   ├── sample_037_sample_0037.png
+│   │   │   ├── sample_039_sample_0039.png
+│   │   │   ├── sample_040_sample_0040.png
+│   │   │   ├── sample_041_sample_0041.png
+│   │   │   ├── sample_042_sample_0042.png
+│   │   │   ├── sample_043_sample_0043.png
+│   │   │   ├── sample_044_sample_0044.png
+│   │   │   ├── sample_045_sample_0045.png
+│   │   │   ├── sample_046_sample_0046.png
+│   │   │   ├── sample_047_sample_0047.png
+│   │   │   ├── sample_048_sample_0048.png
+│   │   │   ├── sample_050_sample_0050.png
+│   │   │   ├── sample_053_sample_0053.png
+│   │   │   ├── sample_054_sample_0054.png
+│   │   │   ├── sample_056_sample_0056.png
+│   │   │   ├── sample_059_sample_0059.png
+│   │   │   ├── sample_060_sample_0060.png
+│   │   │   └── sample_061_sample_0061.png
+│   │   ├── cluster_0_collage.png
+│   │   ├── cluster_1
+│   │   │   ├── sample_000_sample_0000.png
+│   │   │   ├── sample_003_sample_0003.png
+│   │   │   ├── sample_007_sample_0007.png
+│   │   │   ├── sample_008_sample_0008.png
+│   │   │   ├── sample_011_sample_0011.png
+│   │   │   ├── sample_012_sample_0012.png
+│   │   │   ├── sample_016_sample_0016.png
+│   │   │   ├── sample_018_sample_0018.png
+│   │   │   ├── sample_019_sample_0019.png
+│   │   │   ├── sample_027_sample_0027.png
+│   │   │   ├── sample_028_sample_0028.png
+│   │   │   ├── sample_033_sample_0033.png
+│   │   │   ├── sample_038_sample_0038.png
+│   │   │   ├── sample_049_sample_0049.png
+│   │   │   ├── sample_051_sample_0051.png
+│   │   │   ├── sample_052_sample_0052.png
+│   │   │   ├── sample_055_sample_0055.png
+│   │   │   ├── sample_057_sample_0057.png
+│   │   │   ├── sample_058_sample_0058.png
+│   │   │   ├── sample_062_sample_0062.png
+│   │   │   └── sample_063_sample_0063.png
+│   │   └── cluster_1_collage.png
+│   └── visualizations
+│       ├── cluster_comparison.png
+│       ├── clustering_comparison.png
+│       ├── cluster_metrics_comparison.png
+│       ├── dendrogram_example.png
+│       └── kmeans_detailed_analysis.png
+├── cluster_analysis_detailed.py
+├── cluster_analysis_report.txt
+├── clustering1.txt
+└── z7.tex
+
+7 directories, 77 files

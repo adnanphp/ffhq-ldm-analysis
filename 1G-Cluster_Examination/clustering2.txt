@@ -1,0 +1,15 @@
+.
+├── clustering2.txt
+├── focused_cluster_analysis_20251204_145913
+│   ├── analysis_data.json
+│   ├── clusters
+│   │   ├── cluster_0_collage.png
+│   │   └── cluster_1_collage.png
+│   ├── focused_cluster_analysis_report.txt
+│   └── visualizations
+│       └── cluster_demographic_analysis.png
+├── focused_cluster_analysis.py
+├── focused_cluster_analysis_report.txt
+└── z8.tex
+
+4 directories, 9 files

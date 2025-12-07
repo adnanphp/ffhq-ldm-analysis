@@ -1,0 +1,44 @@
+{
+  "total_faces": 20,
+  "potential_memorizations": 190,
+  "unique_faces": 0,
+  "novelty_percentage": 0.0,
+  "novelty_metrics": {
+    "avg_similarity": 0.9844545022098717,
+    "max_similarity": 0.9993121558313105,
+    "novelty_percentage": 0.0,
+    "n_clusters": 1,
+    "n_singletons": 0,
+    "avg_cluster_diversity": 0.014768222900621852,
+    "n_faces": 20
+  },
+  "memorization_threshold": 0.1,
+  "similarity_clusters": {
+    "0": {
+      "size": 20,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "avg_similarity": 0.9852317770993781
+    }
+  }
+}

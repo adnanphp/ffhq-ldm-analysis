@@ -1,0 +1,8 @@
+{
+  "kid_score": -6310271859.7019,
+  "real_samples": 50,
+  "fake_samples": 50,
+  "interpretation": "EXCELLENT (Very similar distributions)",
+  "kernel": "polynomial (degree=3)",
+  "timestamp": "2025-12-02T03:25:59.909728"
+}

@@ -1,0 +1,7 @@
+{
+  "avg_intra_cluster_distance": 0.13424172628654335,
+  "avg_inter_cluster_distance": 0.37676189500989204,
+  "separation_score": 2.8065930425066306,
+  "coverage_score": 0.8637936314345853,
+  "n_clusters": 5
+}

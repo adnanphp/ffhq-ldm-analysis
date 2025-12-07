@@ -1,0 +1,183 @@
+python3 ffhq_diversity_analysis.py
+🎭 FFHQ DIVERSITY ANALYSIS SYSTEM
+============================================================
+
+Options:
+1. Generate new faces and analyze diversity
+2. Analyze diversity of existing generated faces
+3. Comprehensive diversity analysis (100+ faces)
+
+Enter choice (1-3): 1
+⚡ QUICK DIVERSITY ANALYSIS
+============================================================
+🎭 FFHQ DIVERSITY ANALYSIS
+============================================================
+📱 Using device: cpu
+📦 Loading FFHQ model...
+/home/adnan/anaconda3/lib/python3.12/site-packages/pytorch_lightning/utilities/distributed.py:258: LightningDeprecationWarning: `pytorch_lightning.utilities.distributed.rank_zero_only` has been deprecated in v1.8.1 and will be removed in v2.0.0. You can import it from `pytorch_lightning.utilities` instead.
+  rank_zero_deprecation(
+LatentDiffusion: Running in eps-prediction mode
+DiffusionWrapper has 274.06 M params.
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 3, 64, 64) = 12288 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+🔍 Loading face attribute analyzer...
+✅ Face analyzer loaded (simplified version)
+💡 Note: For accurate analysis, use DeepFace or FairFace models
+✅ Models loaded
+📁 Output directory: diversity_analysis_20251202_034956
+
+============================================================
+GENERATING DIVERSE FACES (50 images)
+============================================================
+
+📦 Generating batch 1/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:36<00:00,  7.80s/it]
+  ✅ Generated and analyzed 4 faces in 169.1s
+
+📦 Generating batch 2/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.04s/it]
+  ✅ Generated and analyzed 4 faces in 173.9s
+
+📦 Generating batch 3/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.04s/it]
+  ✅ Generated and analyzed 4 faces in 173.9s
+
+📦 Generating batch 4/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.04s/it]
+  ✅ Generated and analyzed 4 faces in 173.9s
+
+📦 Generating batch 5/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.05s/it]
+  ✅ Generated and analyzed 4 faces in 174.1s
+
+📦 Generating batch 6/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.05s/it]
+  ✅ Generated and analyzed 4 faces in 174.1s
+
+📦 Generating batch 7/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.04s/it]
+  ✅ Generated and analyzed 4 faces in 173.9s
+
+📦 Generating batch 8/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.04s/it]
+  ✅ Generated and analyzed 4 faces in 174.0s
+
+📦 Generating batch 9/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.02s/it]
+  ✅ Generated and analyzed 4 faces in 173.5s
+
+📦 Generating batch 10/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.01s/it]
+  ✅ Generated and analyzed 4 faces in 173.3s
+
+📦 Generating batch 11/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.01s/it]
+  ✅ Generated and analyzed 4 faces in 173.2s
+
+📦 Generating batch 12/13...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.00s/it]
+  ✅ Generated and analyzed 4 faces in 173.1s
+
+📦 Generating batch 13/13...
+Data shape for DDIM sampling is (2, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [01:20<00:00,  4.02s/it]
+  ✅ Generated and analyzed 2 faces in 86.9s
+
+✅ Generated 50 diverse faces
+📁 Saved 20 sample faces in: diversity_analysis_20251202_034956/sample_faces
+
+============================================================
+ANALYZING ATTRIBUTE DISTRIBUTIONS
+============================================================
+
+📊 ATTRIBUTE COUNTS:
+  Total faces: 50
+
+🎭 GENDER DISTRIBUTION:
+  Male: 31 faces (62.0%)
+  Female: 19 faces (38.0%)
+  Gender Diversity Index: 0.958
+
+👵 AGE DISTRIBUTION:
+  0-18: 0 faces (0.0%)
+  19-30: 6 faces (12.0%)
+  31-45: 36 faces (72.0%)
+  46-60: 8 faces (16.0%)
+  60+: 0 faces (0.0%)
+  Age Diversity Index: 0.714
+
+🌍 ETHNICITY DISTRIBUTION:
+  Caucasian: 5 faces (10.0%)
+  Asian: 3 faces (6.0%)
+  African: 29 faces (58.0%)
+  Hispanic: 9 faces (18.0%)
+  Other: 4 faces (8.0%)
+  Ethnicity Diversity Index: 0.762
+
+🏆 OVERALL DIVERSITY SCORE: 0.811
+📈 Interpretation: EXCELLENT diversity across all attributes
+
+📊 Creating distribution visualizations...
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 1718, resource id: 18504943, major code: 40 (TranslateCoords), minor code: 0
+✅ Diversity visualizations saved: diversity_analysis_20251202_034956/diversity_analysis_visualization.png
+
+============================================================
+ANALYZING LATENT SPACE DIVERSITY
+============================================================
+Applying dimensionality reduction...
+PCA explained variance: 0.960
+Number of clusters found: 5
+Creating latent space visualizations...
+✅ Latent space visualization saved: diversity_analysis_20251202_034956/latent_space_visualization.png
+📊 Latent Space Metrics:
+  Average intra-cluster distance: 0.1342
+  Average inter-cluster distance: 0.3768
+  Cluster separation score: 2.807
+  Space coverage score: 0.864
+
+============================================================
+COMPREHENSIVE DIVERSITY REPORT
+============================================================
+
+📋 DIVERSITY ASSESSMENT SUMMARY:
+  Attribute Diversity: 0.811
+  Latent Space Diversity: 0.864
+  Combined Score: 0.827
+  Assessment: EXCELLENT - Highly diverse generation across all dimensions
+
+💡 RECOMMENDATIONS:
+  1. Increase ethnic diversity: African dominates at 58.0%
+
+📁 Comprehensive report saved: diversity_analysis_20251202_034956/comprehensive_diversity_report.json
+
+✅ Diversity analysis complete!
+📁 Results saved in: diversity_analysis_20251202_034956/
+✅ Cleaned up config file
+adnan@adnan-X515EA:~/.../1D-Implemenation/1a-Part-01$ 
+

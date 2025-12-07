@@ -1,0 +1,163 @@
+{
+  "n_images": 64,
+  "n_clusters": 2,
+  "labels": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0
+  ],
+  "gender_analysis": {
+    "0": {
+      "size": 43,
+      "avg_jaw_strength": 0.3250201344490051,
+      "avg_brow_contrast": 0.35605016350746155,
+      "gender_estimation": "Potentially male",
+      "sample_images": [
+        0,
+        1,
+        4,
+        5,
+        6
+      ]
+    },
+    "1": {
+      "size": 21,
+      "avg_jaw_strength": 0.258709192276001,
+      "avg_brow_contrast": 0.3218408226966858,
+      "gender_estimation": "Potentially male",
+      "sample_images": [
+        2,
+        3,
+        7,
+        8,
+        10
+      ]
+    }
+  },
+  "age_analysis": {
+    "0": {
+      "size": 43,
+      "texture_energy": 0.04275326803326607,
+      "smoothness": 0.06770026683807373,
+      "contrast": 0.3539682924747467,
+      "age_estimation": "Potentially older",
+      "sample_images": [
+        0,
+        1,
+        4,
+        5,
+        6
+      ]
+    },
+    "1": {
+      "size": 21,
+      "texture_energy": 0.03118940256536007,
+      "smoothness": 0.0493113212287426,
+      "contrast": 0.28454405069351196,
+      "age_estimation": "Potentially older",
+      "sample_images": [
+        2,
+        3,
+        7,
+        8,
+        10
+      ]
+    }
+  },
+  "ethnicity_analysis": {
+    "0": {
+      "size": 43,
+      "avg_skin_r": 0.6942415237426758,
+      "avg_skin_g": 0.6088653206825256,
+      "avg_skin_b": 0.3769482970237732,
+      "skin_brightness": 0.6942415237426758,
+      "skin_saturation": 0.4570358097553253,
+      "ethnicity_estimation": "Mixed or unclear",
+      "sample_images": [
+        0,
+        1,
+        4,
+        5,
+        6
+      ]
+    },
+    "1": {
+      "size": 21,
+      "avg_skin_r": 0.5294314622879028,
+      "avg_skin_g": 0.4162735641002655,
+      "avg_skin_b": 0.16333258152008057,
+      "skin_brightness": 0.5294314622879028,
+      "skin_saturation": 0.6914944052696228,
+      "ethnicity_estimation": "Potentially medium/warm skin tone",
+      "sample_images": [
+        2,
+        3,
+        7,
+        8,
+        10
+      ]
+    }
+  },
+  "timestamp": "2025-12-04T14:59:15.401572"
+}

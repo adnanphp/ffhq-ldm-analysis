@@ -1,0 +1,76 @@
+.
+├── 1C1-Single_Seed_Diversity
+│   ├── action_plan_recommendations.txt
+│   ├── ffhq_advanced_diversity_analysis_fixed_v2.py
+│   ├── impt_diversity_analysis_20251202_034956
+│   │   ├── action_plan_recommendations.txt
+│   │   ├── attribute_distributions.json
+│   │   ├── comprehensive_advanced_diversity_report.json
+│   │   ├── comprehensive_diversity_report.json
+│   │   ├── coverage_analysis
+│   │   │   ├── coverage_analysis_results.json
+│   │   │   └── coverage_analysis_visualization.png
+│   │   ├── diversity_analysis_visualization.png
+│   │   ├── executive_summary.txt
+│   │   ├── final_advanced_diversity_assessment.png
+│   │   ├── final_project_summary.png
+│   │   ├── latent_space_metrics.json
+│   │   ├── latent_space_visualization.png
+│   │   ├── loaded_faces_summary.json
+│   │   ├── novelty_analysis
+│   │   │   ├── most_similar_faces.png
+│   │   │   ├── novelty_analysis_results.json
+│   │   │   └── novelty_analysis_visualization.png
+│   │   ├── output
+│   │   ├── output-image-json
+│   │   │   ├── attribute_distributions.json
+│   │   │   ├── comprehensive_diversity_report.json
+│   │   │   ├── diversity_analysis_visualization.png
+│   │   │   ├── latent_space_metrics.json
+│   │   │   └── latent_space_visualization.png
+│   │   ├── sample_faces
+│   │   │   ├── face_000_F_31-45_Afr.png
+│   │   │   ├── face_002_M_31-45_Afr.png
+│   │   │   ├── face_005_F_31-45_Afr.png
+│   │   │   ├── face_007_M_31-45_Afr.png
+│   │   │   ├── face_010_M_46-60_Afr.png
+│   │   │   ├── face_012_M_46-60_His.png
+│   │   │   ├── face_015_M_31-45_Oth.png
+│   │   │   ├── face_018_M_31-45_Afr.png
+│   │   │   ├── face_020_F_31-45_His.png
+│   │   │   ├── face_023_M_31-45_His.png
+│   │   │   ├── face_025_M_46-60_Afr.png
+│   │   │   ├── face_028_M_46-60_Afr.png
+│   │   │   ├── face_030_M_31-45_Oth.png
+│   │   │   ├── face_033_F_31-45_Afr.png
+│   │   │   ├── face_036_M_31-45_Afr.png
+│   │   │   ├── face_038_F_31-45_Afr.png
+│   │   │   ├── face_041_F_31-45_Afr.png
+│   │   │   ├── face_043_M_19-30_His.png
+│   │   │   ├── face_046_M_31-45_Afr.png
+│   │   │   └── face_049_F_31-45_Afr.png
+│   │   └── style_analysis
+│   │       ├── style_analysis_results.json
+│   │       ├── style_analysis_visualization.png
+│   │       └── style_cluster_examples.png
+│   ├── novelty_analysis
+│   │   ├── most_similar_faces.png
+│   │   ├── novelty_analysis_results.json
+│   │   └── novelty_analysis_visualization.png
+│   └── z3.tex
+├── 1C2-Multi_Seed_Diversity
+│   ├── face_analysis_20251206_152154
+│   │   ├── analysis_summary.txt
+│   │   ├── comprehensive_report.json
+│   │   ├── loading_summary.json
+│   │   ├── novelty_analysis.png
+│   │   ├── novelty_results.json
+│   │   ├── style_analysis.json
+│   │   └── target_check.json
+│   ├── ffhq_analyze_existing_faces.py
+│   ├── ffhq_diverse_generation_fixed.py
+│   ├── output
+│   └── z4.tex
+└── Div.txt
+
+11 directories, 63 files

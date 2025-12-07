@@ -1,0 +1,69 @@
+
+SEMANTIC ATTRIBUTE ANALYSIS REPORT
+==================================
+
+Date: 2025-12-04 16:29:07
+Output Directory: semantic_attribute_analysis_20251204_162905
+
+1. DATASET SUMMARY
+-----------------
+• Number of samples: 64
+• Number of features: 16
+• Features extracted from: Images
+• Attributes available: Yes (simulated)
+
+2. LATENT SPACE ANALYSIS
+-----------------------
+• Effective dimensionality: 4
+• 4 principal components explain 90% of variance
+• Top 5 PCA components explain 92.4% of variance
+
+3. CLUSTER ANALYSIS
+------------------
+• Number of clusters discovered: 2
+• Cluster distribution:
+   - Cluster 0: 24 samples (37.5%)
+   - Cluster 1: 40 samples (62.5%)
+
+• Cluster interpretation (based on feature differences):
+   - Cluster 0: May represent Bright, high-contrast images
+   - Cluster 1: May represent Dark, low-contrast images
+
+4. ATTRIBUTE ANALYSIS
+--------------------
+• Attribute prediction performance:
+   - Brightness: R² Score = 0.917 (test)
+   - Contrast: R² Score = 0.896 (test)
+   - ColorWarmth: R² Score = 0.929 (test)
+   - Complexity: R² Score = 0.390 (test)
+
+• Average test score: 0.783
+
+5. KEY FINDINGS
+--------------
+• Latent space has moderate effective dimensionality
+• Few semantic clusters identified, suggesting homogeneous data
+• Attributes are well-predictable from features
+
+6. RECOMMENDATIONS
+-----------------
+1. Consider feature selection to reduce dimensionality
+2. Use discovered clusters for semantic grouping and analysis
+3. Attribute directions can be used for semantic editing
+4. Validate findings with human evaluation of sample groupings
+
+7. VISUALIZATIONS
+---------------
+• PCA analysis: semantic_attribute_analysis_20251204_162905/visualizations/pca_analysis.png
+• Cluster analysis: semantic_attribute_analysis_20251204_162905/visualizations/cluster_analysis.png
+• Feature distributions: semantic_attribute_analysis_20251204_162905/visualizations/feature_distributions.png
+• Feature correlations: semantic_attribute_analysis_20251204_162905/visualizations/feature_correlations.png
+
+8. NEXT STEPS
+------------
+1. Manually inspect samples in each cluster to validate semantic groupings
+2. If attributes are available, use regression weights for semantic editing
+3. Consider collecting more diverse samples if clusters are not distinct
+4. Apply findings to downstream tasks (e.g., image retrieval, style transfer)
+
+========================================================================

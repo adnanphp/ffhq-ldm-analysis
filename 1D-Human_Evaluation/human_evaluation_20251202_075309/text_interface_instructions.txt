@@ -1,0 +1,33 @@
+
+TEXT-BASED EVALUATION INTERFACE
+===============================
+
+Instructions:
+1. You will be shown image pairs
+2. Rate each image on a scale of 1-5 for each criterion
+3. Type 'q' at any time to quit and save progress
+
+Rating Scale:
+1 = Very poor
+2 = Poor
+3 = Fair
+4 = Good
+5 = Excellent
+
+Criteria:
+1. Realism (How realistic does the face look?)
+2. Symmetry (How symmetrical are facial features?)
+3. Proportion (Are features proportionally sized?)
+4. Coherence (Do features look like they belong together?)
+5. Artifact-Free (Are there visual artifacts?)
+
+Artifact Checklist (comma-separated):
+- blurry: Blurry or unclear features
+- asymmetry: Noticeable facial asymmetry
+- distortion: Distorted facial features
+- color: Color artifacts or unnatural tones
+- other: Any other issues
+
+Example response:
+Image A - Realism: 4, Symmetry: 3, Proportion: 4, Coherence: 5, Artifacts: blurry,asymmetry
+        

@@ -1,0 +1,17 @@
+{
+  "report_generated": "2025-12-04T14:20:11.656463",
+  "summary": {
+    "n_samples": 64,
+    "original_dimension": 196608,
+    "pca_dimension": 50,
+    "pca_variance_retained": 0.9385226899090234,
+    "tsne_perplexities_tested": [
+      5,
+      15,
+      30,
+      50
+    ],
+    "selected_perplexity": 30,
+    "tsne_dimensions": 2
+  }
+}

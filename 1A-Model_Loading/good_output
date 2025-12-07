@@ -1,0 +1,162 @@
+ python3 zz_good__ffhq_load__model_image_gen.py
+🎭 GENERATING FFHQ FACE
+============================================================
+✅ Created config file: ffhq_config_temp.yaml
+
+📋 CONFIGURATION ANALYSIS
+----------------------------------------
+🔑 Key Config Parameters:
+
+  UNet Configuration:
+    - model_channels: 224 (CRITICAL: Must match checkpoint)
+    - num_head_channels: 32 (Instead of num_heads)
+    - attention_resolutions: [8, 4, 2]
+    - channel_mult: [1, 2, 3, 4]
+
+  VQGAN Configuration:
+    - embed_dim: 3
+    - n_embed: 8192
+    - z_channels: 3
+    - ch: 128
+
+  Model Settings:
+    - scale_factor: 0.18215 (IMPORTANT: 0.18215 vs 1.0)
+    - conditioning_key: crossattn
+----------------------------------------
+
+🏗️ Creating model from config...
+/home/adnan/anaconda3/lib/python3.12/site-packages/torch/xpu/__init__.py:61: UserWarning: XPU device count is zero! (Triggered internally at /pytorch/c10/xpu/XPUFunctions.cpp:115.)
+  return torch._C._xpu_getDeviceCount()
+/home/adnan/anaconda3/lib/python3.12/site-packages/pytorch_lightning/utilities/distributed.py:258: LightningDeprecationWarning: `pytorch_lightning.utilities.distributed.rank_zero_only` has been deprecated in v1.8.1 and will be removed in v2.0.0. You can import it from `pytorch_lightning.utilities` instead.
+  rank_zero_deprecation(
+LatentDiffusion: Running in eps-prediction mode
+DiffusionWrapper has 274.06 M params.
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 3, 64, 64) = 12288 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+✅ Model created
+   Total parameters: 329,378,945
+
+📦 Loading checkpoint: models/ldm/ffhq-ldm-vq-4/model.ckpt
+
+============================================================
+🔍 CHECKPOINT PARAMETER ANALYSIS
+============================================================
+✅ Found state_dict with 959 parameters
+
+📊 Parameter Distribution:
+  0: 94 parameters
+  1: 44 parameters
+  2: 48 parameters
+  3: 44 parameters
+  conv: 14 parameters
+  conv1: 38 parameters
+  conv2: 38 parameters
+  conv_in: 4 parameters
+  conv_out: 4 parameters
+  embedding: 1 parameters
+  k: 4 parameters
+  model_ema: 370 parameters
+  nin_shortcut: 8 parameters
+  norm: 36 parameters
+  norm1: 38 parameters
+  norm2: 38 parameters
+  norm_out: 4 parameters
+  op: 6 parameters
+  post_quant_conv: 2 parameters
+  proj_out: 36 parameters
+  q: 4 parameters
+  qkv: 32 parameters
+  quant_conv: 2 parameters
+  skip_connection: 30 parameters
+  v: 4 parameters
+
+🔑 CRITICAL PARAMETER KEYS:
+  model.diffusion_model.time_embed.0.weight: torch.Size([896, 224])
+  model.diffusion_model.time_embed.0.bias: torch.Size([896])
+  model.diffusion_model.time_embed.2.weight: torch.Size([896, 896])
+  model.diffusion_model.time_embed.2.bias: torch.Size([896])
+  model.diffusion_model.input_blocks.0.0.weight: torch.Size([224, 3, 3, 3])
+  model.diffusion_model.input_blocks.0.0.bias: torch.Size([224])
+  model.diffusion_model.input_blocks.1.0.in_layers.0.weight: torch.Size([224])
+  model.diffusion_model.input_blocks.1.0.in_layers.0.bias: torch.Size([224])
+  model.diffusion_model.input_blocks.1.0.in_layers.2.weight: torch.Size([224, 224, 3, 3])
+  model.diffusion_model.input_blocks.1.0.in_layers.2.bias: torch.Size([224])
+  model.diffusion_model.input_blocks.1.0.emb_layers.1.weight: torch.Size([224, 896])
+  model.diffusion_model.input_blocks.1.0.emb_layers.1.bias: torch.Size([224])
+  model.diffusion_model.input_blocks.1.0.out_layers.0.weight: torch.Size([224])
+  model.diffusion_model.input_blocks.1.0.out_layers.0.bias: torch.Size([224])
+  model.diffusion_model.input_blocks.1.0.out_layers.3.weight: torch.Size([224, 224, 3, 3])
+
+🧠 UNet Analysis:
+  Total UNet parameters: 368
+  Input block: 3 -> 224 channels
+  Attention layers: 0
+
+📥 Loading weights into model...
+
+🔍 PARAMETER MATCHING:
+   Model keys: 585
+   Checkpoint keys: 959
+   Matching keys: 585 (61.0%)
+
+⚠️  Keys in checkpoint but NOT in model (374):
+   - model_ema.num_updates
+   - model_ema.diffusion_modelinput_blocks60opweight
+   - model_ema.diffusion_modeloutput_blocks01qkvweight
+   - model_ema.diffusion_modelinput_blocks20emb_layers1weight
+   - model_ema.diffusion_modelinput_blocks10emb_layers1weight
+   - model_ema.diffusion_modeloutput_blocks90in_layers0weight
+   - ddim_sqrt_one_minus_alphas
+   - model_ema.diffusion_modeloutput_blocks51qkvweight
+   - model_ema.diffusion_modeloutput_blocks00skip_connectionweight
+   - model_ema.diffusion_modelinput_blocks00weight
+   ... and 364 more
+
+✅ Checkpoint loaded
+
+============================================================
+🎨 GENERATING FACE...
+============================================================
+
+⚙️  GENERATION SETTINGS:
+  Steps: 150 (more steps = better quality)
+  Guidance scale: 7.5 (optimal for faces)
+  Sampler: DDIM (eta=0.0)
+  Conditioning: Unconditional (zeros tensor)
+  Latent shape: [3, 64, 64]
+
+⏳ This will take a few minutes on CPU...
+Data shape for DDIM sampling is (1, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 167 timesteps
+DDIM Sampler: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 167/167 [06:20<00:00,  2.28s/it]
+✅ Generation complete
+
+🔍 DECODING IMAGE...
+
+============================================================
+📊 IMAGE ANALYSIS RESULTS:
+============================================================
+✅ Image saved: generated_face.png
+
+🎨 Image Quality Metrics:
+  Contrast: 0.407 (good > 0.3)
+  Brightness: 0.385 (ideal 0.4-0.6)
+  Colors - R: 0.513, G: 0.404, B: 0.239
+
+🔍 FACE LIKELIHOOD:
+  ✅ HIGH CONTRAST: 0.407 (good for faces)
+  ✅ SKIN-LIKE COLORS: R > G > B
+  🎉 VERY LIKELY A GOOD FACE IMAGE!
+
+📁 Open generated_face.png to see the generated image!
+
+============================================================
+🔑 KEY DIFFERENCES FOR SUCCESS:
+============================================================
+1. scale_factor: 0.18215 (vs 1.0 in failed attempt)
+2. conditioning_key: crossattn (vs None in failed attempt)
+3. num_head_channels: 32 (vs num_heads in failed attempt)
+4. Guidance scale: 7.5 (vs 1.0 in failed attempt)
+5. Steps: 150 (vs 50 in failed attempt)
+6. Proper latent shape: [3, 64, 64]

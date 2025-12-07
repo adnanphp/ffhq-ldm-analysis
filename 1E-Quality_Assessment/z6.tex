@@ -1,0 +1,220 @@
+\section{Fixed Quantitative Evaluation Framework}
+\label{sec:fixed_quantitative_evaluation}
+
+To address the limitations in identity preservation metrics and provide more reliable quantitative assessment, we developed a fixed evaluation framework that uses practical, computationally feasible metrics when face recognition models are unavailable.
+
+\subsection{Overview of Fixed Implementation}
+
+The fixed quantitative evaluation framework provides:
+
+\begin{itemize}
+    \item \textbf{Robust identity metrics} using pixel statistics instead of face recognition models
+    \item \textbf{Practical scoring} that ignores unrealistic simulated metrics
+    \item \textbf{Comprehensive visualization} of actual model performance
+    \item \textbf{Transparent reporting} of limitations and recommendations
+\end{itemize}
+
+\subsection{Fixed Identity Preservation Metrics}
+
+Since face recognition models (e.g., FaceNet) were unavailable, we developed simplified but meaningful identity metrics:
+
+\subsubsection{Color Diversity Metric}
+\label{subsubsec:color_diversity}
+
+Calculates the color variation across generated faces:
+
+\begin{equation}
+\text{Color Diversity} = \frac{1}{N} \sum_{i=1}^{N} \left( \frac{1}{3} \sum_{c \in \{R,G,B\}} \sigma_{i,c} \right)
+\end{equation}
+
+where $\sigma_{i,c}$ is the standard deviation of color channel $c$ in image $i$, and $N$ is the number of images.
+
+\subsubsection{Face-Like Characteristics Score}
+\label{subsubsec:face_score}
+
+Uses heuristics to identify face-like images:
+
+\begin{equation}
+\text{Face Score} = \frac{\text{Skin Tone Score} + \text{Contrast Score}}{2}
+\end{equation}
+
+with:
+\begin{itemize}
+    \item Skin Tone Score: 1.0 if $R_{\text{mean}} > G_{\text{mean}} > B_{\text{mean}}$ (Caucasian skin tone heuristic), else 0.3
+    \item Contrast Score: $\min(\frac{\sigma_{\text{image}}}{0.3}, 1.0)$ where $\sigma_{\text{image}}$ is the global standard deviation
+\end{itemize}
+
+\subsubsection{Inter-Image Similarity}
+\label{subsubsec:inter_image_similarity}
+
+Measures diversity between generated faces using Mean Squared Error (MSE):
+
+\begin{equation}
+\text{Similarity}(i,j) = \frac{1}{1 + \text{MSE}(I_i, I_j)}
+\end{equation}
+
+\begin{equation}
+\text{Identity Diversity} = 1 - \frac{1}{M} \sum_{i=1}^{M-1} \sum_{j=i+1}^{M} \text{Similarity}(i,j)
+\end{equation}
+
+where $M$ is the sample size (minimum of 10 or total images).
+
+\subsection{Practical Metric Scoring System}
+
+Given the unreliability of simulated FID/KID metrics, we implemented a practical scoring system using only verifiable metrics:
+
+\begin{equation}
+\text{Practical Score} = \frac{\sum_{m \in \{\text{precision},\text{recall},\text{identity}\}} w_m \cdot S_m}{\sum_{m} w_m}
+\end{equation}
+
+with weights:
+\begin{itemize}
+    \item $w_{\text{precision}} = 0.4$
+    \item $w_{\text{recall}} = 0.4$
+    \item $w_{\text{identity}} = 0.2$
+\end{itemize}
+
+\subsubsection{Interpretation Guidelines}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|l|}
+\hline
+\textbf{Practical Score} & \textbf{Rating} & \textbf{Interpretation} \\
+\hline
+$> 0.8$ & ⭐⭐⭐⭐⭐ Excellent & Model produces high-quality, diverse faces \\
+$0.6 - 0.8$ & ⭐⭐⭐⭐ Good & Good face generation with acceptable diversity \\
+$0.4 - 0.6$ & ⭐⭐⭐ Fair & Moderate quality with room for improvement \\
+$0.2 - 0.4$ & ⭐⭐ Poor & Basic face generation, limited diversity \\
+$< 0.2$ & ⭐ Very Poor & Poor quality and diversity \\
+\hline
+\end{tabular}
+\caption{Practical score interpretation guidelines}
+\label{tab:practical_score_interpretation}
+\end{table}
+
+\subsection{Implementation Details}
+
+The fixed evaluator provides the following functionality:
+
+\subsubsection{Automatic Directory Detection}
+\begin{verbatim}
+# Finds the latest evaluation directory
+eval_dirs = sorted(glob.glob("quantitative_eval_*"))
+latest_dir = eval_dirs[-1] if eval_dirs else None
+\end{verbatim}
+
+\subsubsection{Image Loading Pipeline}
+\begin{verbatim}
+# Loads generated PNG images with validation
+fake_images = []
+for png_file in png_files[:50]:  # Limit to 50 for efficiency
+    img = Image.open(png_file).convert('RGB')
+    img_tensor = transforms.ToTensor()(img)
+    fake_images.append(img_tensor)
+fake_tensor = torch.stack(fake_images)
+\end{verbatim}
+
+\subsubsection{Existing Metrics Integration}
+\begin{itemize}
+    \item Loads previously calculated FID/KID metrics (if available)
+    \item Integrates precision/recall scores from earlier evaluation
+    \item Preserves all existing results while adding new metrics
+\end{itemize}
+
+\subsection{Visualization Components}
+
+The framework generates comprehensive visualizations:
+
+\subsubsection{Identity Diversity Grid}
+A grid of generated faces (up to 9 samples) showing:
+\begin{itemize}
+    \item Individual face images
+    \item Face-like classification (✅ Face-like / ⚠️ Other)
+    \item Color and contrast statistics
+    \item Overall diversity and face scores
+\end{itemize}
+
+\subsubsection{Practical Metrics Dashboard}
+A two-panel visualization showing:
+\begin{enumerate}
+    \item Bar chart of individual metric scores with color-coded performance
+    \item Gauge chart showing overall practical score with interpretation
+\end{enumerate}
+
+\subsection{Error Handling and Robustness}
+
+The implementation includes comprehensive error handling:
+
+\begin{itemize}
+    \item Graceful degradation when face recognition models are unavailable
+    \item Validation of input images and metrics
+    \item Transparent reporting of limitations and assumptions
+    \item Fallback to simplified but meaningful metrics
+\end{itemize}
+
+\subsection{Limitations and Recommendations}
+
+The fixed evaluator transparently reports limitations:
+
+\subsubsection{Known Limitations}
+\begin{itemize}
+    \item Simplified identity metrics lack semantic understanding
+    \item Color-based face detection is heuristic, not learned
+    \item Inter-image similarity uses pixel-level, not feature-level comparison
+    \item No comparison to real face distribution (requires actual dataset)
+\end{itemize}
+
+\subsubsection{Recommended Improvements}
+\begin{enumerate}
+    \item \textbf{Integrate FaceNet or ArcFace} for proper identity metrics
+    \item \textbf{Use actual FFHQ dataset} for accurate FID/KID calculations
+    \item \textbf{Add semantic similarity measures} using pre-trained classifiers
+    \item \textbf{Implement demographic analysis} for age, gender, ethnicity diversity
+\end{enumerate}
+
+\subsection{Usage Workflow}
+
+The complete evaluation workflow is automated:
+
+\begin{enumerate}
+    \item \textbf{Step 1}: Load existing generated images and metrics
+    \item \textbf{Step 2}: Calculate fixed identity preservation metrics
+    \item \textbf{Step 3}: Compute practical overall score
+    \item \textbf{Step 4}: Generate visualizations and comprehensive report
+    \item \textbf{Step 5}: Provide actionable recommendations
+\end{enumerate}
+
+\subsection{Output Files Generated}
+
+The framework produces the following output files:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{File} & \textbf{Description} \\
+\hline
+\texttt{identity\_metrics\_fixed.json} & Identity diversity and face scores \\
+\texttt{identity\_diversity\_grid.png} & Visual grid of face diversity \\
+\texttt{comprehensive\_report\_fixed.json} & Complete evaluation results \\
+\texttt{practical\_metrics\_visualization.png} & Dashboard visualization \\
+\hline
+\end{tabular}
+\caption{Output files generated by fixed evaluator}
+\label{tab:fixed_evaluator_outputs}
+\end{table}
+
+\subsection{Conclusion}
+
+The fixed quantitative evaluation framework provides:
+\begin{itemize}
+    \item \textbf{Practical assessment} using available, verifiable metrics
+    \item \textbf{Robust implementation} that handles missing components gracefully
+    \item \textbf{Transparent reporting} of both capabilities and limitations
+    \item \textbf{Actionable insights} for model improvement
+\end{itemize}
+
+While simplified compared to ideal evaluation setups, this framework provides meaningful assessment when complete tooling is unavailable, ensuring research progress is not hindered by missing components.
+
+The code is modular and extensible, allowing easy integration of improved metrics (e.g., proper face recognition models) when they become available.

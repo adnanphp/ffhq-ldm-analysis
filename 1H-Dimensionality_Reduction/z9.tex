@@ -1,0 +1,112 @@
+\section{PCA Analysis of Generated Images}
+
+\subsection{Report Summary}
+A principal component analysis (PCA) was performed on 64 generated images to examine their structure in pixel space. The analysis revealed the following key results:
+
+\begin{itemize}
+    \item \textbf{Images analyzed:} 64
+    \item \textbf{Original feature dimension:} 196,608 (flattened pixels)
+    \item \textbf{Memory footprint:} 96.0 MB
+    \item \textbf{Total pixels analyzed:} 12,582,912
+    \item \textbf{Reduced dimension:} 50 principal components
+    \item \textbf{Total variance explained:} 93.852\%
+    \item \textbf{Components for 95\% variance:} 1
+    \item \textbf{Components for 99\% variance:} 1
+\end{itemize}
+
+\subsection{Variance Explained by Principal Components}
+The analysis shows a rapid drop in explained variance after the first principal component, which is typical for image data:
+
+\begin{itemize}
+    \item \textbf{First PC:} 15.14\% of variance
+    \item \textbf{Second PC:} 8.34\% of variance
+    \item \textbf{Top 5 PCs:} 38.36\% of variance
+    \item \textbf{Top 10 PCs:} 52.44\% of variance
+\end{itemize}
+
+\subsection{Interpretation}
+The high variance explained by the first few principal components suggests a strong underlying structure in the generated images. The fact that only 1 component is needed to capture 95\% of the variance indicates that the images occupy a relatively low-dimensional subspace within the high-dimensional pixel space (196,608 dimensions).
+
+This result has important implications:
+\begin{itemize}
+    \item The generated images exhibit high redundancy in pixel space
+    \item Most visual information can be captured in a much lower-dimensional representation
+    \item The generative process produces images with consistent structural patterns
+\end{itemize}
+
+\subsection{Visualizations Generated}
+The analysis produced several visualization files:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\hline
+\textbf{Filename} & \textbf{Description} \\
+\hline
+\texttt{pca\_analysis.png} & Comprehensive PCA visualization (6 subplots) \\
+\texttt{pca\_variance\_detailed.png} & Detailed variance plots \\
+\texttt{pca\_scatter\_with\_labels.png} & PC1 vs PC2 with sample labels \\
+\texttt{pca\_biplot.png} & Biplot showing samples and principal directions \\
+\hline
+\end{tabular}
+\caption{PCA visualization files generated}
+\end{table}
+
+\subsection{Data Files}
+The analysis produced the following data files:
+\begin{itemize}
+    \item \texttt{pca\_transformed.npy} -- PCA-transformed data in NumPy format
+    \item \texttt{pca\_results.json} -- PCA analysis results in JSON format
+\end{itemize}
+
+\subsection{Code Implementation}
+The PCA analysis was performed using a custom Python framework (\texttt{latent\_space\_analysis\_simple.py}) with the following key components:
+
+\subsubsection{Data Loading}
+\begin{itemize}
+    \item Loads PNG images from a specified directory
+    \item Normalizes pixel values to [0, 1] range
+    \item Flattens images to create feature vectors
+    \item Handles memory efficiently for large datasets
+\end{itemize}
+
+\subsubsection{PCA Analysis}
+\begin{itemize}
+    \item Standardizes data using \texttt{StandardScaler}
+    \item Performs PCA with configurable number of components (default: 50)
+    \item Calculates explained variance and cumulative variance
+    \item Identifies components needed for specific variance thresholds
+\end{itemize}
+
+\subsubsection{Visualization}
+The code generates multiple visualization types:
+\begin{enumerate}
+    \item Scree plot showing explained variance by component
+    \item Cumulative variance plot with 95\% and 99\% thresholds
+    \item 2D and 3D scatter plots of principal components
+    \item Heatmap of PCA components
+    \item Distribution analysis along principal components
+    \item Biplots showing sample relationships
+\end{enumerate}
+
+\subsubsection{Reporting}
+\begin{itemize}
+    \item Generates comprehensive text reports
+    \item Saves results in JSON format for further analysis
+    \item Creates organized output directory structure with timestamps
+    \item Provides runtime statistics and performance metrics
+\end{itemize}
+
+\subsection{Technical Details}
+\begin{itemize}
+    \item \textbf{Framework:} Python with scikit-learn PCA implementation
+    \item \textbf{Standardization:} Yes (z-score normalization)
+    \item \textbf{Random state:} Fixed (seed = 42) for reproducibility
+    \item \textbf{Output organization:} Timestamp-based directories with subfolders for visualizations and analysis data
+    \item \textbf{Progress tracking:} Uses tqdm for loading progress
+\end{itemize}
+
+\subsection{Conclusions}
+The PCA analysis successfully demonstrated that the generated FFHQ images occupy a low-dimensional subspace within the high-dimensional pixel space. The ability to capture 95\% of the variance with just 1 principal component indicates significant structure and redundancy in the generated images. This finding validates the effectiveness of the generative process and provides insights for potential dimensionality reduction in downstream applications.
+
+The analysis framework provides a comprehensive toolset for examining the structure of generated images, with capabilities for visualization, reporting, and further statistical analysis.

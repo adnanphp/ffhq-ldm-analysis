@@ -1,0 +1,113 @@
+.
+├── ffhq_human_evaluation_v2.py
+├── human_evaluation_20251202_075309
+│   ├── analysis
+│   │   ├── analysis_report.txt
+│   │   ├── analysis_summary.json
+│   │   ├── criteria_breakdown.png
+│   │   ├── expertise_comparison.png
+│   │   ├── model_comparison.png
+│   │   ├── performance_heatmap.png
+│   │   ├── ratings_data.csv
+│   │   └── response_times.png
+│   ├── evaluation_interface.html
+│   ├── results
+│   │   └── simulated_responses.json
+│   ├── stimuli
+│   │   ├── ffhq
+│   │   │   ├── ffhq_face_0000.png
+│   │   │   ├── ffhq_face_0001.png
+│   │   │   ├── ffhq_face_0002.png
+│   │   │   ├── ffhq_face_0003.png
+│   │   │   ├── ffhq_face_0004.png
+│   │   │   ├── ffhq_face_0005.png
+│   │   │   ├── ffhq_face_0006.png
+│   │   │   ├── ffhq_face_0007.png
+│   │   │   ├── ffhq_face_0008.png
+│   │   │   ├── ffhq_face_0009.png
+│   │   │   ├── ffhq_face_0010.png
+│   │   │   ├── ffhq_face_0011.png
+│   │   │   ├── ffhq_face_0012.png
+│   │   │   ├── ffhq_face_0013.png
+│   │   │   ├── ffhq_face_0014.png
+│   │   │   ├── ffhq_face_0015.png
+│   │   │   ├── ffhq_face_0016.png
+│   │   │   ├── ffhq_face_0017.png
+│   │   │   ├── ffhq_face_0018.png
+│   │   │   ├── ffhq_face_0019.png
+│   │   │   ├── ffhq_face_0020.png
+│   │   │   ├── ffhq_face_0021.png
+│   │   │   ├── ffhq_face_0022.png
+│   │   │   ├── ffhq_face_0023.png
+│   │   │   ├── ffhq_face_0024.png
+│   │   │   ├── ffhq_face_0025.png
+│   │   │   ├── ffhq_face_0026.png
+│   │   │   ├── ffhq_face_0027.png
+│   │   │   ├── ffhq_face_0028.png
+│   │   │   ├── ffhq_face_0029.png
+│   │   │   ├── ffhq_face_0030.png
+│   │   │   ├── ffhq_face_0031.png
+│   │   │   ├── ffhq_face_0032.png
+│   │   │   ├── ffhq_face_0033.png
+│   │   │   ├── ffhq_face_0034.png
+│   │   │   ├── ffhq_face_0035.png
+│   │   │   ├── ffhq_face_0036.png
+│   │   │   ├── ffhq_face_0037.png
+│   │   │   ├── ffhq_face_0038.png
+│   │   │   ├── ffhq_face_0039.png
+│   │   │   ├── ffhq_face_0040.png
+│   │   │   ├── ffhq_face_0041.png
+│   │   │   ├── ffhq_face_0042.png
+│   │   │   ├── ffhq_face_0043.png
+│   │   │   ├── ffhq_face_0044.png
+│   │   │   ├── ffhq_face_0045.png
+│   │   │   ├── ffhq_face_0046.png
+│   │   │   ├── ffhq_face_0047.png
+│   │   │   ├── ffhq_face_0048.png
+│   │   │   └── ffhq_face_0049.png
+│   │   ├── real
+│   │   │   ├── real_face_0000.png
+│   │   │   ├── real_face_0001.png
+│   │   │   ├── real_face_0002.png
+│   │   │   ├── real_face_0003.png
+│   │   │   ├── real_face_0004.png
+│   │   │   ├── real_face_0005.png
+│   │   │   ├── real_face_0006.png
+│   │   │   ├── real_face_0007.png
+│   │   │   ├── real_face_0008.png
+│   │   │   ├── real_face_0009.png
+│   │   │   ├── real_face_0010.png
+│   │   │   └── real_face_0011.png
+│   │   ├── stimulus_metadata.json
+│   │   ├── stylegan2
+│   │   │   ├── stylegan2_face_0000.png
+│   │   │   ├── stylegan2_face_0001.png
+│   │   │   ├── stylegan2_face_0002.png
+│   │   │   ├── stylegan2_face_0003.png
+│   │   │   ├── stylegan2_face_0004.png
+│   │   │   ├── stylegan2_face_0005.png
+│   │   │   ├── stylegan2_face_0006.png
+│   │   │   ├── stylegan2_face_0007.png
+│   │   │   ├── stylegan2_face_0008.png
+│   │   │   ├── stylegan2_face_0009.png
+│   │   │   ├── stylegan2_face_0010.png
+│   │   │   └── stylegan2_face_0011.png
+│   │   └── stylegan3
+│   │       ├── stylegan3_face_0000.png
+│   │       ├── stylegan3_face_0001.png
+│   │       ├── stylegan3_face_0002.png
+│   │       ├── stylegan3_face_0003.png
+│   │       ├── stylegan3_face_0004.png
+│   │       ├── stylegan3_face_0005.png
+│   │       ├── stylegan3_face_0006.png
+│   │       ├── stylegan3_face_0007.png
+│   │       ├── stylegan3_face_0008.png
+│   │       ├── stylegan3_face_0009.png
+│   │       ├── stylegan3_face_0010.png
+│   │       └── stylegan3_face_0011.png
+│   ├── text_evaluation.py
+│   └── text_interface_instructions.txt
+├── treeHuman.txt
+└── z5.tex
+
+9 directories, 102 files

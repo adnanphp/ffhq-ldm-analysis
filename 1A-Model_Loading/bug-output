@@ -1,0 +1,186 @@
+python3 z_bug_test_ffhq_fixed_final_v11.py
+🚀 FIXED FFHQ MODEL TEST
+==================================================
+📁 Working directory: /home/adnan/Music/1B-Fall-2025-Courses/COMP 473-Pattern-recognition/1zzzz-implemnataion/1D-Implemenation/1a-Part-01
+
+============================================================
+🚀 STARTING FIXED FFHQ MODEL TEST
+============================================================
+📊 Parameters: 2 samples, 50 steps
+
+📥 LOADING MODEL...
+🔧 Setting up environment...
+✅ LDM modules imported successfully
+🔧 Applying compatibility fixes...
+✅ VectorQuantizer compatibility fixed
+📁 Using config: configs/latent-diffusion/ffhq-ldm-vq-4.yaml
+
+📋 CONFIG ANALYSIS: configs/latent-diffusion/ffhq-ldm-vq-4.yaml
+----------------------------------------
+🔑 Key Parameters:
+  UNet:
+    - model_channels: 224
+    - num_heads: 8
+    - num_head_channels: N/A
+    - attention_resolutions: [1]
+  VQGAN:
+    - embed_dim: 3
+    - n_embed: 8192
+    - z_channels: 3
+  Other:
+    - scale_factor: 1.0
+    - conditioning_key: None
+----------------------------------------
+📦 Loading checkpoint from: models/ldm/ffhq-ldm-vq-4/model.ckpt
+
+============================================================
+🔍 CHECKPOINT PARAMETER ANALYSIS
+============================================================
+✅ Found state_dict with 959 parameters
+
+📊 Parameter Distribution:
+  0: 94 parameters
+  1: 44 parameters
+  2: 48 parameters
+  3: 44 parameters
+  conv: 14 parameters
+  conv1: 38 parameters
+  conv2: 38 parameters
+  conv_in: 4 parameters
+  conv_out: 4 parameters
+  embedding: 1 parameters
+  k: 4 parameters
+  model_ema: 370 parameters
+  nin_shortcut: 8 parameters
+  norm: 36 parameters
+  norm1: 38 parameters
+  norm2: 38 parameters
+  norm_out: 4 parameters
+  op: 6 parameters
+  post_quant_conv: 2 parameters
+  proj_out: 36 parameters
+  q: 4 parameters
+  qkv: 32 parameters
+  quant_conv: 2 parameters
+  skip_connection: 30 parameters
+  v: 4 parameters
+
+🔑 Sample Parameter Keys and Shapes:
+  betas: torch.Size([1000])
+  alphas_cumprod: torch.Size([1000])
+  alphas_cumprod_prev: torch.Size([1000])
+  sqrt_alphas_cumprod: torch.Size([1000])
+  sqrt_one_minus_alphas_cumprod: torch.Size([1000])
+  log_one_minus_alphas_cumprod: torch.Size([1000])
+  sqrt_recip_alphas_cumprod: torch.Size([1000])
+  sqrt_recipm1_alphas_cumprod: torch.Size([1000])
+  ddim_sigmas: torch.Size([250])
+  ddim_alphas: torch.Size([250])
+
+🔎 Checking for Required Components:
+  model.diffusion_model: ✅ FOUND
+  first_stage_model: ✅ FOUND
+  cond_stage_model: ❌ MISSING
+
+🧠 UNet Parameters: 368 total
+  Attention layers: 0
+  Input block channels: 3 -> 224
+
+🏗️ Instantiating model...
+/home/adnan/anaconda3/lib/python3.12/site-packages/torch/xpu/__init__.py:61: UserWarning: XPU device count is zero! (Triggered internally at /pytorch/c10/xpu/XPUFunctions.cpp:115.)
+  return torch._C._xpu_getDeviceCount()
+/home/adnan/anaconda3/lib/python3.12/site-packages/pytorch_lightning/utilities/distributed.py:258: LightningDeprecationWarning: `pytorch_lightning.utilities.distributed.rank_zero_only` has been deprecated in v1.8.1 and will be removed in v2.0.0. You can import it from `pytorch_lightning.utilities` instead.
+  rank_zero_deprecation(
+LatentDiffusion: Running in eps-prediction mode
+DiffusionWrapper has 245.90 M params.
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 3, 64, 64) = 12288 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+🔧 VectorQuantizer called with n_e=8192, e_dim=3, beta=0.25, kwargs={}
+⚠️  Using working minimal VectorQuantizer
+📥 Loading weights...
+
+📊 PARAMETER COMPARISON:
+  Model has: 301,354,625 parameters
+  Checkpoint has: 603,448,110 parameters
+⚠️  WARNING: Model has FEWER parameters than checkpoint!
+
+🔧 LOADING RESULTS:
+----------------------------------------
+❌ MISSING keys: 37
+   These parameters exist in checkpoint but not in model:
+   - model.diffusion_model.input_blocks.1.1.norm.weight
+   - model.diffusion_model.input_blocks.1.1.norm.bias
+   - model.diffusion_model.input_blocks.1.1.qkv.weight
+   - model.diffusion_model.input_blocks.1.1.qkv.bias
+   - model.diffusion_model.input_blocks.1.1.proj_out.weight
+   - model.diffusion_model.input_blocks.1.1.proj_out.bias
+   - model.diffusion_model.input_blocks.2.1.norm.weight
+   - model.diffusion_model.input_blocks.2.1.norm.bias
+   - model.diffusion_model.input_blocks.2.1.qkv.weight
+   - model.diffusion_model.input_blocks.2.1.qkv.bias
+   ... and 27 more
+
+⚠️  UNEXPECTED keys: 470
+   These parameters exist in model but not in checkpoint:
+   + ddim_sigmas
+   + ddim_alphas
+   + ddim_alphas_prev
+   + ddim_sqrt_one_minus_alphas
+   + model_ema.decay
+   + model_ema.num_updates
+   + model_ema.diffusion_modeltime_embed0weight
+   + model_ema.diffusion_modeltime_embed0bias
+   + model_ema.diffusion_modeltime_embed2weight
+   + model_ema.diffusion_modeltime_embed2bias
+   ... and 460 more
+
+📈 KEY MATCHING: 93.0%
+   Model keys: 526
+   Checkpoint keys: 959
+   Matching keys: 489
+
+✅ Model loaded successfully!
+
+✅ Model loaded in 16.25 seconds
+
+🎨 GENERATING SAMPLES...
+
+🔍 DETERMINING LATENT SHAPE...
+   Checking first_stage_model attributes:
+     Found in_channels: 3
+
+📋 Shape candidates: [[3, 64, 64], [4, 64, 64], [3, 32, 32], [4, 32, 32]]
+✅ Selected latent shape: [3, 64, 64]
+
+🎨 GENERATING 2 SAMPLES
+   Shape: [3, 64, 64]
+   Steps: 50
+
+🔧 SETTING UP CONDITIONING...
+   Model conditioning key: None
+   Using forced concatenation conditioning with shape: torch.Size([2, 0, 64, 64])
+
+⚙️  SAMPLER SETTINGS:
+   Conditioning shape: torch.Size([2, 0, 64, 64])
+   Unconditional conditioning shape: torch.Size([2, 0, 64, 64])
+   Guidance scale: 1.0 (unconditional)
+   Eta: 1.0
+Data shape for DDIM sampling is (2, 3, 64, 64), eta 1.0
+Running DDIM Sampling with 50 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 50/50 [04:52<00:00,  5.84s/it]
+
+📥 DECODING SAMPLES...
+✅ Generated samples shape: torch.Size([2, 3, 256, 256])
+
+✅ Samples generated in 298.87 seconds
+
+💾 SAVING IMAGES...
+💾 Saved: ffhq_test_output/ffhq_sample_1.png
+💾 Saved: ffhq_test_output/ffhq_sample_2.png
+
+============================================================
+🎉 SUCCESS! Generated 2 samples in 315.34 seconds
+📁 Output directory: ffhq_test_output
+   ffhq_sample_1.png: 116.2 KB
+   ffhq_sample_2.png: 122.2 KB

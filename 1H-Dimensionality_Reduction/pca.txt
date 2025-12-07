@@ -1,0 +1,18 @@
+.
+├── latent_space_analysis_PCA.py
+├── pca_analysis_20251204_140059
+│   ├── analysis
+│   │   ├── pca_analysis_report.txt
+│   │   ├── pca_results.json
+│   │   ├── pca_transformed.npy
+│   │   └── report_summary.json
+│   └── visualizations
+│       ├── pca_analysis.png
+│       ├── pca_biplot.png
+│       ├── pca_scatter_with_labels.png
+│       └── pca_variance_detailed.png
+├── pca_analysis_report.txt
+├── pca.txt
+└── z9.tex
+
+4 directories, 12 files

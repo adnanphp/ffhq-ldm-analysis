@@ -1,0 +1,21 @@
+.
+├── analysis_report.txt
+├── interpolation_density_outlier.py
+├── latent_manifold_analysis_20251204_153529
+│   ├── analysis_report.txt
+│   ├── interpolations
+│   ├── outliers
+│   │   └── images
+│   │       ├── outlier_000_idx2.png
+│   │       ├── outlier_001_idx46.png
+│   │       └── outlier_collage.png
+│   └── visualizations
+│       ├── density_estimation.png
+│       ├── interpolation_comparison.png
+│       ├── manifold_embeddings.png
+│       └── outlier_detection.png
+├── lma.txt
+├── output
+└── z11.tex
+
+6 directories, 13 files

@@ -1,0 +1,94 @@
+python3 semantic_attribute_analysis.py
+🔍 SEMANTIC ATTRIBUTE DISCOVERY & REGRESSION
+============================================================
+📁 Output directory: semantic_attribute_analysis_20251204_162905
+
+============================================================
+RUNNING SEMANTIC ATTRIBUTE ANALYSIS
+============================================================
+📂 Using data directory: latent_analysis_20251202_175108/latents/
+
+📂 Loading data from: latent_analysis_20251202_175108/latents/
+📊 Found 64 image files
+🔍 Processing 64 images...
+Loading images: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 64/64 [00:00<00:00, 181.30it/s]
+✅ Extracted 16 features from 64 images
+
+✅ Starting analysis with 64 samples, 16 features
+
+📐 Analyzing latent space structure...
+✅ Dimensionality analysis:
+   • 4 components explain 90% of variance
+   • 5 components explain 95% of variance
+   • Effective dimensionality: ~4
+   • Average absolute feature correlation: 0.497
+   • Average nearest neighbor distance: 0.244
+
+🔍 Discovering semantic directions...
+✅ Top 10 PCA components explain 99.6% of variance
+   Top 5 components variance:
+   PC1: 55.92%
+   PC2: 16.53%
+   PC3: 9.00%
+   PC4: 6.32%
+   PC5: 4.61%
+
+🔍 Performing unsupervised attribute discovery...
+✅ Optimal number of clusters: 2 (silhouette: 0.347)
+
+📊 Cluster Distribution:
+   Cluster 0: 24 samples (37.5%)
+   Cluster 1: 40 samples (62.5%)
+
+🔍 Characterizing clusters...
+
+   Cluster 0 characteristics:
+      Value: Cluster=0.619, Others=0.375 (diff=0.244)
+      Red channel: Cluster=0.133, Others=0.343 (diff=0.210)
+      Face contrast: Cluster=0.260, Others=0.462 (diff=0.202)
+      Contrast: Cluster=0.305, Others=0.505 (diff=0.199)
+      Brightness: Cluster=0.341, Others=0.539 (diff=0.198)
+
+   Cluster 1 characteristics:
+      Value: Cluster=0.375, Others=0.619 (diff=0.244)
+      Red channel: Cluster=0.343, Others=0.133 (diff=0.210)
+      Face contrast: Cluster=0.462, Others=0.260 (diff=0.202)
+      Contrast: Cluster=0.505, Others=0.305 (diff=0.199)
+      Brightness: Cluster=0.539, Others=0.341 (diff=0.198)
+
+🎨 Creating comprehensive visualizations...
+
+🎯 Simulating attribute labels for demonstration...
+✅ Simulated 4 attributes
+
+🎯 Training attribute predictors...
+   Brightness: R² Score = 0.917 (test)
+   Contrast: R² Score = 0.896 (test)
+   ColorWarmth: R² Score = 0.929 (test)
+   Complexity: R² Score = 0.390 (test)
+
+============================================================
+GENERATING ANALYSIS REPORT
+============================================================
+✅ Report saved to: semantic_attribute_analysis_20251204_162905/semantic_analysis_report.txt
+✅ Analysis data saved to: semantic_attribute_analysis_20251204_162905/analysis_data.json
+
+============================================================
+ANALYSIS COMPLETE!
+============================================================
+✅ Total time: 2.2 seconds
+✅ Output saved to: semantic_attribute_analysis_20251204_162905/
+✅ Report: semantic_attribute_analysis_20251204_162905/semantic_analysis_report.txt
+
+🎯 Analysis Summary:
+   • Analyzed 64 samples with 16 features
+   • Effective dimensionality: 4
+   • Discovered 2 semantic clusters
+   • Average attribute prediction score: 0.783
+
+📋 Key outputs:
+   1. PCA-based semantic directions
+   2. Cluster-based attribute discovery
+   3. Attribute prediction models
+   4. Comprehensive visualizations
+   5. Detailed analysis report

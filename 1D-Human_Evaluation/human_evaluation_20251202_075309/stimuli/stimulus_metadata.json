@@ -1,0 +1,16 @@
+{
+  "total_faces": 50,
+  "ffhq_faces": 50,
+  "models": [
+    "FFHQ-LDM",
+    "StyleGAN2",
+    "StyleGAN3",
+    "Real"
+  ],
+  "generation_date": "2025-12-02T09:23:54.970309",
+  "parameters": {
+    "steps": 50,
+    "guidance_scale": 7.5,
+    "eta": 0.0
+  }
+}

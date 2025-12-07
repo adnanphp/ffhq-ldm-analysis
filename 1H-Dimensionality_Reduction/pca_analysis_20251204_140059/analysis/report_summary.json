@@ -1,0 +1,13 @@
+{
+  "report_generated": "2025-12-04T14:01:06.126292",
+  "summary": {
+    "n_samples": 64,
+    "original_dimension": 196608,
+    "pca_dimension": 50,
+    "variance_explained": 0.9385226899090244,
+    "components_for_95_variance": 1,
+    "components_for_99_variance": 1,
+    "variance_pc1": 0.15142684432118358,
+    "variance_pc2": 0.08336267810004722
+  }
+}

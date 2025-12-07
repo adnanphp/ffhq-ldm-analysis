@@ -1,0 +1,106 @@
+
+FACE GENERATION QUALITY EVALUATION - ANALYSIS REPORT
+===================================================
+
+Study Overview:
+---------------
+- Total Participants: 50
+- Total Ratings: 5000
+- Evaluation Criteria: Realism, Symmetry, Proportion, Coherence, Artifacts, Overall
+- Models Compared: FFHQ-LDM, StyleGAN2, StyleGAN3, Real
+
+Statistical Summary:
+-------------------
+1. Overall Model Performance (Average Ratings):
+               mean       std  count  median
+model                                       
+FFHQ-LDM   3.961992  0.494061   1255     4.0
+Real       4.518312  0.301030   1185     4.5
+StyleGAN2  3.463431  0.719872   1370     3.5
+StyleGAN3  3.775126  0.615133   1190     3.8
+
+2. Detailed Criteria Performance:
+                          mean       std  count
+model     criterion                            
+FFHQ-LDM  coherence   4.011155  0.523560    251
+          overall     3.960956  0.240976    251
+          proportion  4.030279  0.471805    251
+          realism     3.719124  0.571693    251
+          symmetry    4.088446  0.510280    251
+Real      coherence   4.486920  0.349754    237
+          overall     4.517722  0.173273    237
+          proportion  4.487342  0.314225    237
+          realism     4.499156  0.312317    237
+          symmetry    4.600422  0.311298    237
+StyleGAN2 coherence   3.512774  0.759181    274
+          overall     3.462044  0.380597    274
+          proportion  3.519343  0.748692    274
+          realism     3.212774  0.752201    274
+          symmetry    3.610219  0.812925    274
+StyleGAN3 coherence   3.809664  0.702761    238
+          overall     3.778151  0.319192    238
+          proportion  3.768067  0.677104    238
+          realism     3.624370  0.664719    238
+          symmetry    3.895378  0.603034    238
+
+3. Key Findings:
+----------------
+
+A. Model Rankings (by Overall Score):
+   1. Real: 4.52/5
+   2. FFHQ-LDM: 3.96/5
+   3. StyleGAN3: 3.78/5
+   4. StyleGAN2: 3.46/5
+
+B. Performance by Criterion:
+   • Realism:
+     Best: Real (4.50)
+     Worst: StyleGAN2 (3.21)
+   • Symmetry:
+     Best: Real (4.60)
+     Worst: StyleGAN2 (3.61)
+   • Proportion:
+     Best: Real (4.49)
+     Worst: StyleGAN2 (3.52)
+   • Coherence:
+     Best: Real (4.49)
+     Worst: StyleGAN2 (3.51)
+
+C. Expertise Effects:
+   • FFHQ-LDM: Max difference between expertise levels = 0.10
+   • Real: Max difference between expertise levels = 0.05
+   • StyleGAN2: Max difference between expertise levels = 0.12
+   • StyleGAN3: Max difference between expertise levels = 0.04
+
+D. Response Time Analysis:
+   • Mean response time: 29.3s per pair
+   • Standard deviation: 8.8s
+   • Range: 15.0s - 44.9s
+
+E. Statistical Significance:
+   • ANOVA: F = 780.092, p = 0.000000
+   • ✅ Significant differences found between models
+
+Conclusions and Recommendations:
+--------------------------------
+1. Real achieved the highest overall score (4.52/5)
+2. StyleGAN2 had the lowest overall score (3.46/5)
+3. Real outperforms FFHQ-LDM in this evaluation
+4. For realism: Real scored highest (4.50/5)
+
+Visualizations:
+---------------
+The following plots have been generated:
+1. model_comparison.png - Overall ratings by model
+2. criteria_breakdown.png - Ratings by model and criterion
+3. expertise_comparison.png - Ratings by expertise level
+4. response_times.png - Distribution of response times
+5. performance_heatmap.png - Heatmap of model performance
+
+Data Files:
+-----------
+1. ratings_data.csv - Raw rating data for further analysis
+2. simulated_responses.json - Complete simulated dataset
+
+Report Generated: 2025-12-02 09:23:59
+================================================================================

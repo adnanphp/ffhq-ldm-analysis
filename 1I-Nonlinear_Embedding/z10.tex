@@ -1,0 +1,172 @@
+\section{t-SNE Analysis of Generated Images}
+
+\subsection{Report Summary}
+A t-Distributed Stochastic Neighbor Embedding (t-SNE) analysis was performed on 64 generated images to visualize their similarities in 2D space. The analysis included preprocessing with PCA for computational efficiency and multiple perplexity values for robustness.
+
+\begin{itemize}
+    \item \textbf{Images analyzed:} 64
+    \item \textbf{Feature dimension:} 196,608 (flattened pixels)
+    \item \textbf{Memory footprint:} 96.0 MB
+    \item \textbf{PCA preprocessing:} Reduced to 50 dimensions (93.852\% variance retained)
+    \item \textbf{t-SNE dimensions:} 2D (for visualization)
+    \item \textbf{Perplexities tested:} [5, 15, 30, 50]
+    \item \textbf{Selected perplexity:} 30
+    \item \textbf{Iterations:} 1,000
+\end{itemize}
+
+\subsection{Key Findings}
+The t-SNE analysis successfully embedded 64 high-dimensional samples into a 2D space where human interpretable patterns emerge:
+
+\begin{itemize}
+    \item Clear clustering patterns reveal natural groupings in the data
+    \item Different perplexity values were tested to balance local and global structure preservation
+    \item Pairwise distance distributions show the similarity relationships between images
+    \item K-means clustering applied to t-SNE space reveals distinct groups
+\end{itemize}
+
+\subsection{Visualizations Generated}
+The analysis produced comprehensive visualizations:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\hline
+\textbf{Filename} & \textbf{Description} \\
+\hline
+\texttt{tsne\_perplexity\_comparison.png} & Comparison of different perplexities \\
+\texttt{tsne\_detailed\_analysis.png} & Detailed analysis with multiple views \\
+\texttt{tsne\_with\_labels.png} & t-SNE plot with sample labels \\
+\texttt{tsne\_cluster\_analysis.png} & K-means clustering results \\
+\texttt{tsne\_thumbnails\_full.png} & Thumbnail visualization \\
+\texttt{tsne\_clustered\_thumbnails.png} & Clustered view with collages \\
+\hline
+\end{tabular}
+\caption{t-SNE visualization files generated}
+\end{table}
+
+\subsection{Data Files}
+The analysis produced the following data files:
+\begin{itemize}
+    \item \texttt{tsne\_perplexity*.npy} -- t-SNE embeddings for each perplexity value
+    \item \texttt{tsne\_summary.json} -- t-SNE analysis parameters and summary
+    \item \texttt{cluster\_assignments.json} -- Cluster membership data
+\end{itemize}
+
+\subsection{Interpretation Guidelines}
+When interpreting t-SNE results:
+
+\begin{enumerate}
+    \item \textbf{Clusters matter:} Groups of points close together represent similar images
+    \item \textbf{Local structure:} Nearby points in t-SNE space are genuinely similar
+    \item \textbf{Global distances:} May be distorted (this is normal for t-SNE)
+    \item \textbf{Perplexity comparison:} Check stability across different perplexities
+    \item \textbf{Silhouette scores:} Higher scores indicate more distinct clusters
+\end{enumerate}
+
+\subsection{Code Implementation}
+
+\subsubsection{t-SNE Analysis Framework (\texttt{tsne\_analysis\_simple.py})}
+The main analysis framework includes:
+
+\begin{itemize}
+    \item \textbf{Data loading:} Loads PNG images, normalizes to [0,1], flattens to feature vectors
+    \item \textbf{PCA preprocessing:} Reduces dimensionality from 196,608 to 50 dimensions while retaining 93.852\% variance
+    \item \textbf{t-SNE execution:} Runs t-SNE with multiple perplexity values (5, 15, 30, 50)
+    \item \textbf{Visualization generation:} Creates comprehensive plots including scatter plots, density plots, and cluster analysis
+    \item \textbf{Reporting:} Generates detailed text and JSON reports
+\end{itemize}
+
+\subsubsection{Thumbnail Visualizer (\texttt{tsne\_thumbnail\_visualizer.py})}
+Creates enhanced visualizations with actual image thumbnails:
+
+\begin{itemize}
+    \item \textbf{Thumbnail placement:} Places image thumbnails at their t-SNE coordinates
+    \item \textbf{Clustered visualization:} Colors thumbnails by cluster assignment
+    \item \textbf{Cluster collages:} Creates image grids for each cluster
+    \item \textbf{Interactive HTML:} Generates interactive visualizations using Plotly (optional)
+    \item \textbf{Grid layouts:} Organizes images by cluster in grid format
+\end{itemize}
+
+\subsubsection{Technical Features}
+\begin{itemize}
+    \item \textbf{PCA preprocessing:} Essential for t-SNE efficiency on high-dimensional data
+    \item \textbf{Multiple perplexities:} Tests parameter sensitivity and robustness
+    \item \textbf{K-means clustering:} Applies clustering to t-SNE space to identify groups
+    \item \textbf{Silhouette scoring:} Quantifies cluster quality
+    \item \textbf{Pairwise distance analysis:} Examines similarity distributions
+\end{itemize}
+
+\subsection{Visualization Examples}
+The framework generates several visualization types:
+
+\subsubsection{Perplexity Comparison}
+Shows t-SNE results for different perplexity values side-by-side to assess stability and parameter sensitivity.
+
+\subsubsection{Detailed Analysis Plot}
+Includes four panels:
+\begin{enumerate}
+    \item Main scatter plot with sample indices
+    \item Density heatmap showing concentration of samples
+    \item Marginal distributions of t-SNE dimensions
+    \item Pairwise distance histogram
+\end{enumerate}
+
+\subsubsection{Thumbnail Visualization}
+Places actual image thumbnails at their t-SNE coordinates, allowing direct visual correlation between image content and position in reduced space.
+
+\subsubsection{Clustering Results}
+Shows K-means clustering applied to t-SNE space with silhouette scores for different cluster counts (2, 3, 4, 5 clusters).
+
+\subsection{Limitations and Considerations}
+\begin{itemize}
+    \item \textbf{Stochastic nature:} t-SNE results vary between runs (fixed random seed mitigates this)
+    \item \textbf{Global structure:} Not preserved as well as local structure
+    \item \textbf{Parameter sensitivity:} Perplexity choice affects results
+    \item \textbf{Computational cost:} Expensive for very large datasets
+    \item \textbf{Distance interpretation:} Distances between clusters are not directly interpretable
+\end{itemize}
+
+\subsection{Interactive Features}
+When Plotly is installed, the framework generates:
+\begin{itemize}
+    \item \textbf{Interactive HTML:} Hover-to-see sample information
+    \item \textbf{Zoom capabilities:} Explore dense regions in detail
+    \item \textbf{Dynamic labeling:} Toggle sample labels on/off
+\end{itemize}
+
+\subsection{Workflow Integration}
+The analysis pipeline:
+\begin{enumerate}
+    \item Load and preprocess images (normalize, flatten)
+    \item Apply PCA for dimensionality reduction
+    \item Run t-SNE with multiple perplexities
+    \item Generate static visualizations
+    \item Apply clustering algorithms
+    \item Create thumbnail-enhanced plots
+    \item Generate comprehensive reports
+\end{enumerate}
+
+\subsection{Output Organization}
+Results are organized in timestamped directories:
+\begin{itemize}
+    \item \texttt{analysis/} -- JSON summaries, numpy arrays, text reports
+    \item \texttt{visualizations/} -- All generated plots and images
+    \item \texttt{cluster\_*/} -- Image grids for each cluster
+\end{itemize}
+
+\subsection{Conclusions}
+The t-SNE analysis reveals that the generated images have distinct groups or styles that form natural clusters in reduced space. The clear clustering patterns suggest meaningful structure in the generated image dataset. The thumbnail visualizations provide intuitive understanding of which images are similar based on their proximity in t-SNE space.
+
+\textbf{Key Insight:} The t-SNE visualization confirms that the generative process produces images with interpretable similarities and differences, forming clusters that correspond to visual characteristics perceptible to human observers.
+
+\subsection{Usage Recommendations}
+\begin{enumerate}
+    \item Start with \texttt{tsne\_perplexity\_comparison.png} to understand parameter effects
+    \item Examine \texttt{tsne\_detailed\_analysis.png} for comprehensive insights
+    \item Use \texttt{tsne\_thumbnails\_full.png} to correlate positions with actual images
+    \item Check cluster assignments to understand grouping patterns
+    \item Compare with original images to validate discovered patterns
+\end{enumerate}
+
+\subsection{Methodological Note}
+The combination of PCA preprocessing (for efficiency) followed by t-SNE (for visualization) represents a standard best practice for high-dimensional data visualization. Testing multiple perplexities ensures robustness of the observed patterns, while thumbnail integration bridges the gap between abstract embeddings and human-interpretable visual content.

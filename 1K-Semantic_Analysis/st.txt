@@ -1,0 +1,22 @@
+.
+├── output
+├── semantic_analysis_report.txt
+├── semantic_attribute_analysis_20251204_162905
+│   ├── analysis_data.json
+│   ├── attributes
+│   ├── semantic_analysis_report.txt
+│   ├── semantic_insights
+│   │   ├── attribute_performance.png
+│   │   ├── cluster_distribution.png
+│   │   └── cluster_samples.png
+│   └── visualizations
+│       ├── cluster_analysis.png
+│       ├── feature_correlations.png
+│       ├── feature_distributions.png
+│       └── pca_analysis.png
+├── semantic_attribute_analysis.py
+├── semantic_attribute_analysis_visualize.py
+├── st.txt
+└── z12.tex
+
+5 directories, 15 files

@@ -1,0 +1,31 @@
+.
+├── tsne_analysis_20251204_142006
+│   ├── analysis
+│   │   ├── report_summary.json
+│   │   ├── tsne_analysis_report.txt
+│   │   ├── tsne_perplexity15.npy
+│   │   ├── tsne_perplexity30.npy
+│   │   ├── tsne_perplexity50.npy
+│   │   ├── tsne_perplexity5.npy
+│   │   └── tsne_summary.json
+│   └── visualizations
+│       ├── tsne_cluster_analysis.png
+│       ├── tsne_detailed_analysis.png
+│       ├── tsne_perplexity_comparison.png
+│       └── tsne_with_labels.png
+├── tsne_analysis_report.txt
+├── tsne_analysis_simple.py
+├── tsne_thumbnails_20251204_142817
+│   ├── cluster_0_grid.png
+│   ├── cluster_1_grid.png
+│   ├── cluster_2_grid.png
+│   ├── cluster_3_grid.png
+│   ├── cluster_assignments.json
+│   ├── tsne_clustered_thumbnails.png
+│   ├── tsne_interactive.html
+│   └── tsne_thumbnails_full.png
+├── tsne_thumbnail_visualizer.py
+├── tsne.txt
+└── z10.tex
+
+5 directories, 24 files

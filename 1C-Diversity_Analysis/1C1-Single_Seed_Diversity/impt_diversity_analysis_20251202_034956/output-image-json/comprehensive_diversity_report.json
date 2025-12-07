@@ -1,0 +1,86 @@
+{
+  "report_date": "2025-12-02T06:05:49.424553",
+  "model": "FFHQ Latent Diffusion",
+  "total_faces_analyzed": 50,
+  "attribute_distributions": {
+    "gender": {
+      "Male": {
+        "count": 31,
+        "percentage": 62.0
+      },
+      "Female": {
+        "count": 19,
+        "percentage": 38.0
+      }
+    },
+    "age": {
+      "0-18": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "19-30": {
+        "count": 6,
+        "percentage": 12.0
+      },
+      "31-45": {
+        "count": 36,
+        "percentage": 72.0
+      },
+      "46-60": {
+        "count": 8,
+        "percentage": 16.0
+      },
+      "60+": {
+        "count": 0,
+        "percentage": 0.0
+      }
+    },
+    "ethnicity": {
+      "Caucasian": {
+        "count": 5,
+        "percentage": 10.0
+      },
+      "Asian": {
+        "count": 3,
+        "percentage": 6.0
+      },
+      "African": {
+        "count": 29,
+        "percentage": 57.99999999999999
+      },
+      "Hispanic": {
+        "count": 9,
+        "percentage": 18.0
+      },
+      "Other": {
+        "count": 4,
+        "percentage": 8.0
+      }
+    },
+    "diversity_metrics": {
+      "gender_diversity": 0.9580420222262997,
+      "age_diversity": 0.7137800977215386,
+      "ethnicity_diversity": 0.7615869572803867,
+      "overall_diversity": 0.8111363590760751,
+      "interpretation": "EXCELLENT diversity across all attributes"
+    },
+    "total_faces": 50,
+    "timestamp": "2025-12-02T04:26:04.041393"
+  },
+  "latent_space_metrics": {
+    "avg_intra_cluster_distance": 0.13424172628654335,
+    "avg_inter_cluster_distance": 0.37676189500989204,
+    "separation_score": 2.8065930425066306,
+    "coverage_score": 0.8637936314345853,
+    "n_clusters": 5
+  },
+  "diversity_assessment": {
+    "attribute_diversity_score": 0.8111363590760751,
+    "latent_space_diversity_score": 0.8637936314345853,
+    "combined_diversity_score": 0.826933540783628,
+    "interpretation": "EXCELLENT - Highly diverse generation across all dimensions"
+  },
+  "recommendations": [
+    "Increase ethnic diversity: African dominates at 58.0%"
+  ]
+}

@@ -1,0 +1,84 @@
+
+FOCUSED CLUSTER ANALYSIS REPORT
+===============================
+
+Date: 2025-12-04 14:59:15
+Output Directory: focused_cluster_analysis_20251204_145913
+
+1. DATASET SUMMARY
+-----------------
+• Total images analyzed: 64
+• Number of clusters found: 2
+
+2. CLUSTER DISTRIBUTION
+----------------------
+• Cluster 0: 43 images (67.2%)
+• Cluster 1: 21 images (32.8%)
+
+3. GENDER ANALYSIS
+-----------------
+
+Cluster 0:
+• Size: 43 images
+• Jaw strength: 0.325
+• Brow contrast: 0.356
+• Gender estimation: Potentially male
+• Sample images: [0, 1, 4, 5, 6]
+
+Cluster 1:
+• Size: 21 images
+• Jaw strength: 0.259
+• Brow contrast: 0.322
+• Gender estimation: Potentially male
+• Sample images: [2, 3, 7, 8, 10]
+
+4. AGE ANALYSIS
+--------------
+
+Cluster 0:
+• Texture energy: 0.043 (higher = more wrinkles)
+• Smoothness: 0.068 (higher = smoother skin)
+• Contrast: 0.354 (higher = more age-related contrast)
+• Age estimation: Potentially older
+
+Cluster 1:
+• Texture energy: 0.031 (higher = more wrinkles)
+• Smoothness: 0.049 (higher = smoother skin)
+• Contrast: 0.285 (higher = more age-related contrast)
+• Age estimation: Potentially older
+
+5. ETHNICITY ANALYSIS
+--------------------
+
+Cluster 0:
+• Average skin tone (RGB): (0.69, 0.61, 0.38)
+• Brightness: 0.69
+• Saturation: 0.46
+• Ethnicity estimation: Mixed or unclear
+
+Cluster 1:
+• Average skin tone (RGB): (0.53, 0.42, 0.16)
+• Brightness: 0.53
+• Saturation: 0.69
+• Ethnicity estimation: Potentially medium/warm skin tone
+
+6. KEY FINDINGS
+--------------
+• Check cluster collages in: focused_cluster_analysis_20251204_145913/clusters/
+• Examine visual patterns in each cluster
+• Compare with human perception of gender/age/ethnicity
+• Note: These are algorithmic estimates and may not be accurate
+
+7. RECOMMENDATIONS
+-----------------
+1. Manually verify cluster assignments
+2. Look for consistent visual patterns in each cluster
+3. Consider merging clusters if patterns are similar
+4. Use these findings as a starting point for deeper analysis
+
+8. VISUALIZATIONS
+---------------
+• cluster_demographic_analysis.png - Summary of gender and age patterns
+• cluster_*_collage.png - Image collages for each cluster
+
+========================================================================

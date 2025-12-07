@@ -1,0 +1,89 @@
+
+LATENT SPACE ANALYSIS REPORT
+============================
+
+Date: 2025-12-04 15:35:38
+Output Directory: latent_manifold_analysis_20251204_153529
+
+1. DATASET SUMMARY
+-----------------
+• Total points analyzed: 64
+• Feature dimensionality: 114
+• Data range: [0.000, 1.000]
+• Data mean: 0.363, std: 0.365
+
+2. MANIFOLD PROPERTIES
+---------------------
+
+PCA:
+• Intrinsic dimension estimate: 0.73
+• Average local density: 0.915
+• Average curvature: 0.728
+
+TSNE:
+• Intrinsic dimension estimate: 0.62
+• Average local density: 2.184
+• Average curvature: 0.739
+
+UMAP:
+• Intrinsic dimension estimate: 0.45
+• Average local density: 2.090
+• Average curvature: 0.755
+
+ISOMAP:
+• Intrinsic dimension estimate: 0.84
+• Average local density: 0.571
+• Average curvature: 0.778
+
+MDS:
+• Intrinsic dimension estimate: 0.44
+• Average local density: 0.403
+• Average curvature: 0.669
+
+3. DENSITY ESTIMATION
+--------------------
+
+KDE:
+• Average density: 1.911e-13
+• Density std: 1.853e-13
+
+GMM:
+• Average density: 3.132e+275
+• Density std: inf
+
+KNN:
+• Average density: 1.366e+03
+• Density std: 9.994e+03
+
+4. OUTLIER DETECTION
+-------------------
+
+• Total consensus outliers: 2 (3.1%)
+• Outlier indices: [2, 46]
+
+5. INTERPOLATION ANALYSIS
+------------------------
+
+Pair 1:
+• Linear smoothness: 99999996.256
+• Spherical smoothness: 64.558
+• Improvement: -100.0%
+
+Pair 2:
+• Linear smoothness: 99999990.015
+• Spherical smoothness: 118.630
+• Improvement: -100.0%
+
+Pair 3:
+• Linear smoothness: 99999990.792
+• Spherical smoothness: 88.780
+• Improvement: -100.0%
+
+6. VISUALIZATIONS
+---------------
+• Manifold embeddings: latent_manifold_analysis_20251204_153529/visualizations/manifold_embeddings.png
+• Density estimation: latent_manifold_analysis_20251204_153529/visualizations/density_estimation.png
+• Outlier detection: latent_manifold_analysis_20251204_153529/visualizations/outlier_detection.png
+• Interpolation analysis: latent_manifold_analysis_20251204_153529/visualizations/interpolation_comparison.png
+
+========================================================================

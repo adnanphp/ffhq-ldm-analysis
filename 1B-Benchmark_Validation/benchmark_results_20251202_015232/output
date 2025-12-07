@@ -1,0 +1,153 @@
+python3 ffhq_benchmark_fixed.py
+🎭 FFHQ BENCHMARK & IMAGE GENERATOR
+============================================================
+
+Options:
+1. Quick test (generate 2 images)
+2. Full benchmark (test batch sizes 1, 2, 4)
+3. Just generate sample grid
+
+Enter choice (1-3): 2
+🎭 FFHQ PERFORMANCE BENCHMARK (FIXED)
+============================================================
+✅ Created config file: ffhq_simple_config.yaml
+📱 Using device: cpu
+⚠️  WARNING: Running on CPU - this will be VERY SLOW!
+💡 Tip: If you have a GPU, make sure PyTorch CUDA is installed
+📦 Loading model...
+/home/adnan/anaconda3/lib/python3.12/site-packages/pytorch_lightning/utilities/distributed.py:258: LightningDeprecationWarning: `pytorch_lightning.utilities.distributed.rank_zero_only` has been deprecated in v1.8.1 and will be removed in v2.0.0. You can import it from `pytorch_lightning.utilities` instead.
+  rank_zero_deprecation(
+LatentDiffusion: Running in eps-prediction mode
+DiffusionWrapper has 274.06 M params.
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 3, 64, 64) = 12288 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+✅ Model loaded
+📁 Output directory: benchmark_results_20251202_015232
+
+============================================================
+INFERENCE SPEED BENCHMARK
+============================================================
+
+📊 Settings:
+  Steps: 20 (reduced for faster testing)
+  Repeats per batch: 2
+  Device: cpu
+  Batch sizes: [1, 2, 4]
+  Output directory: benchmark_results_20251202_015232
+
+========================================
+Testing batch size: 1
+========================================
+
+  Repeat 1/2...
+Data shape for DDIM sampling is (1, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:47<00:00,  2.39s/it]
+    ✅ Generated and saved 1 images
+    ⏱️  Total: 51.49s | Sampling: 47.86s | Decoding: 3.62s
+    🚀 Speed: 0.02 img/s
+
+  Repeat 2/2...
+Data shape for DDIM sampling is (1, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:47<00:00,  2.39s/it]
+    ✅ Generated and saved 1 images
+    ⏱️  Total: 51.46s | Sampling: 47.88s | Decoding: 3.58s
+    🚀 Speed: 0.02 img/s
+
+  📈 Summary for batch size 1:
+    Average time: 51.47s
+    Average speed: 0.02 img/s
+    Total images generated: 2
+    Images saved in: benchmark_results_20251202_015232/batch_1
+
+========================================
+Testing batch size: 2
+========================================
+
+  Repeat 1/2...
+Data shape for DDIM sampling is (2, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [01:27<00:00,  4.39s/it]
+    ✅ Generated and saved 2 images
+    ⏱️  Total: 94.47s | Sampling: 87.76s | Decoding: 6.71s
+    🚀 Speed: 0.02 img/s
+
+  Repeat 2/2...
+Data shape for DDIM sampling is (2, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [01:23<00:00,  4.18s/it]
+    ✅ Generated and saved 2 images
+    ⏱️  Total: 90.16s | Sampling: 83.53s | Decoding: 6.64s
+    🚀 Speed: 0.02 img/s
+
+  📈 Summary for batch size 2:
+    Average time: 92.32s
+    Average speed: 0.02 img/s
+    Total images generated: 4
+    Images saved in: benchmark_results_20251202_015232/batch_2
+
+========================================
+Testing batch size: 4
+========================================
+
+  Repeat 1/2...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:40<00:00,  8.04s/it]
+    ✅ Generated and saved 4 images
+    ⏱️  Total: 173.98s | Sampling: 160.71s | Decoding: 13.27s
+    🚀 Speed: 0.02 img/s
+
+  Repeat 2/2...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 20 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:41<00:00,  8.08s/it]
+    ✅ Generated and saved 4 images
+    ⏱️  Total: 174.97s | Sampling: 161.63s | Decoding: 13.34s
+    🚀 Speed: 0.02 img/s
+
+  📈 Summary for batch size 4:
+    Average time: 174.48s
+    Average speed: 0.02 img/s
+    Total images generated: 8
+    Images saved in: benchmark_results_20251202_015232/batch_4
+
+✅ All results saved to: benchmark_results_20251202_015232/benchmark_results.csv
+✅ Performance plot saved: benchmark_results_20251202_015232/performance_plot.png
+
+============================================================
+CREATING SAMPLE GRID
+============================================================
+Generating 4 sample faces...
+Data shape for DDIM sampling is (4, 3, 64, 64), eta 0.0
+Running DDIM Sampling with 31 timesteps
+DDIM Sampler: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 31/31 [04:11<00:00,  8.12s/it]
+✅ Generated 4 faces in 264.98s
+
+📁 Output files:
+  • Sample grid: benchmark_results_20251202_015232/sample_grid.png
+  • Individual faces: benchmark_results_20251202_015232/individual_samples/
+  • Benchmark results: benchmark_results_20251202_015232/benchmark_results.csv
+
+============================================================
+FINAL BENCHMARK REPORT
+============================================================
+
+📊 Results Summary:
+Batch Size   Img/s        Time/Batch   Efficiency  
+------------------------------------------------------------
+1            0.02         51.47        1.9         %
+2            0.02         92.32        1.1         %
+4            0.02         174.48       0.6         %
+
+📁 All files saved in: benchmark_results_20251202_015232/
+
+💡 Next steps:
+  1. Check the 'individual_samples' folder for generated faces
+  2. Open 'sample_grid.png' to see all faces together
+  3. Review 'benchmark_results.csv' for detailed metrics
+  4. If on CPU, consider reducing batch sizes for faster testing
+adnan@adnan-X515EA:~/.../1D-Implemenation/1a-Part-01$ 
+
