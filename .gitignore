@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data and model files (large files)
+*.pth
+*.ckpt
+*.pt
+*.bin
+*.h5
+*.npy
+*.npz
+
+# Logs and outputs
+logs/
+outputs/
+results/generated/
+checkpoints/
+
+# Temporary files
+temp/
+tmp/
