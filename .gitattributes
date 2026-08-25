@@ -1,18 +1,19 @@
-# Hide generated HTML files from language statistics
+# Hide ALL HTML files from language statistics
 *.html linguist-vendored
+*.html linguist-documentation
+
+# Hide generated output directories
 human_evaluation_*/ linguist-vendored
 tsne_thumbnails_*/ linguist-vendored
 1D-Human_Evaluation/human_evaluation_*/ linguist-vendored
 1I-Nonlinear_Embedding/tsne_thumbnails_*/ linguist-vendored
+**/human_evaluation_*/ linguist-vendored
+**/tsne_thumbnails_*/ linguist-vendored
 
-# Hide output directories from language stats
-*/human_evaluation_*/ linguist-vendored
-*/tsne_thumbnails_*/ linguist-vendored
-
-# Force Python detection for .py files
+# Force Python for all .py files
 *.py linguist-language=Python
 
-# Mark generated/experiment output folders as vendored
-**/benchmark_results_*/ linguist-vendored
-**/impt_diversity_analysis_*/ linguist-vendored
-**/face_analysis_*/ linguist-vendored
+# Mark all experiment output folders as vendored
+benchmark_results_*/ linguist-vendored
+impt_diversity_analysis_*/ linguist-vendored
+face_analysis_*/ linguist-vendored
