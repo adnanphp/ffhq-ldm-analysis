@@ -37,3 +37,15 @@ checkpoints/
 # Temporary files
 temp/
 tmp/
+
+# Generated HTML files
+*.html
+human_evaluation_*/
+tsne_thumbnails_*/
+1D-Human_Evaluation/human_evaluation_*/
+1I-Nonlinear_Embedding/tsne_thumbnails_*/
+
+# Generated experiment outputs
+benchmark_results_*/
+impt_diversity_analysis_*/
+face_analysis_*/
